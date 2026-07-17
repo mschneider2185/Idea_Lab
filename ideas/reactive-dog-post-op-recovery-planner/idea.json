@@ -1,0 +1,175 @@
+{
+  "slug": "reactive-dog-post-op-recovery-planner",
+  "name": "Pawscript",
+  "title": "Reactive Dog Post-Op Recovery Planner",
+  "oneLiner": "Adaptive post-surgery recovery plans built for the actual dog, the actual home, and the actual human — not the generic discharge sheet.",
+  "status": "researched",
+  "researchedAt": "2026-07-17",
+  "tags": {
+    "type": "B2C → B2B SaaS",
+    "market": "Pet health / vet tech",
+    "target": "Dog owners after orthopedic surgery; vet surgical practices",
+    "mainCompetitor": "TopDog Health",
+    "trend": "Growing niche"
+  },
+  "scores": {
+    "opportunity": {
+      "score": 7,
+      "note": "Large, insured, emotionally-committed buyer pool in an acute-need window; the wedge is niche but expands naturally into all surgical send-home software."
+    },
+    "problemSeverity": {
+      "score": 8,
+      "note": "8-12 weeks of mandatory confinement protecting a $3.5K-$7K surgery, with re-injury (and a second surgery) as the cost of failure. For reactive/high-energy dogs the standard sheet is genuinely unworkable."
+    },
+    "feasibility": {
+      "score": 8,
+      "note": "Intake-form → personalized staged plan is exactly what LLMs are good at; a vet-reviewed template library keeps it safe. Solo-buildable MVP; no hardware, no marketplace cold-start."
+    },
+    "whyNow": {
+      "score": 8,
+      "note": "Vet software is adopting AI discharge notes right now (SignalPET launched Aug 2025) but all of it is clinic-side and generic. The owner-side, home-context layer is unclaimed."
+    }
+  },
+  "businessFit": {
+    "revenuePotential": {
+      "rating": "$$",
+      "note": "$1M-$10M ARR path: consumer plans ($39-$59) at volume from social/SEO channels, then $199-$399/mo white-label licenses to the ~1,000+ US ortho-heavy surgical and referral practices."
+    },
+    "executionDifficulty": {
+      "score": 5,
+      "note": "Tech is simple; the real work is vet-reviewed protocol templates and staying on the right side of the 'general care guidance vs. practicing veterinary medicine' line."
+    },
+    "goToMarket": {
+      "score": 7,
+      "note": "Unusually findable buyers: dedicated TPLO recovery Facebook groups, r/reactivedogs, and a well-worn SEO lane TopDog Health proved converts. Clinic sales are slower but warm via the owner side."
+    },
+    "founderFit": "A 4-dog household is real founder-market fit here: you've lived crate rest, multi-dog management, and the gap between what the vet hands you and what your living room allows. Pair with a DVM or rehab-certified vet tech as protocol reviewer to close the credibility gap."
+  },
+  "summary": {
+    "problem": "Vet surgical practices send dogs home from knee and joint operations (TPLO, TTA, FHO, IVDD) with generic recovery sheets. The sheets assume a calm dog, an open floor plan, and an owner who can lift 90 pounds. Reality: high-energy breeds in small apartments, nervous dogs who refuse crate rest, multi-dog households, elderly owners managing alone. The protocol works inside the clinic and falls apart at home — so callbacks spike, compliance craters, and some dogs re-injure a $5,000 repair.",
+    "solution": "A 5-10 minute intake (procedure, breed, weight, behavior profile, home layout, other pets, caretaker's physical limits) generates a staged week-by-week recovery plan: confinement setups sized to the actual space, enrichment routines that burn mental energy for high-drive breeds, harness and equipment recommendations matched to the human's back, med/PT schedules, and 'is this normal?' escalation scripts for 2 a.m. panics. Delivered as a printable plan plus a daily companion (SMS/app) that adapts as recovery progresses.",
+    "wedge": "Start with one procedure (TPLO — the highest-volume, highest-cost, longest-confinement surgery) and one underserved segment (reactive/high-energy dogs), sold direct to owners in the communities where they're already panicking. Expand to all procedures, then flip to clinics as white-label send-home software."
+  },
+  "whyNow": {
+    "narrative": "The clinic side of vet software is being rebuilt with AI at this moment — AI scribes and auto-generated discharge instructions shipped across 2025 — but every one of those tools optimizes the vet's paperwork, not the owner's 12 weeks at home. Meanwhile pet insurance growth keeps approving more $4K-$7K surgeries, and short-staffed clinics have less time than ever for discharge education and callback triage. The personalization layer that was economically impossible when plans were hand-written is now nearly free to generate.",
+    "drivers": [
+      "LLMs collapse the cost of personalized protocol generation — a per-dog, per-home plan used to take a rehab vet's hour; now it takes an intake form plus review.",
+      "Incumbents just validated the direction: SignalPET launched AI discharge instructions in Aug 2025 (250+ daily active users within weeks); Provet Cloud, CoVet, and Lupa all ship AI-generated client docs — all clinic-side, all generic.",
+      "Pet insurance boom funds more surgeries: insured US cats and dogs grew ~126% from 2019-2023, and the global market is projected from $14.2B (2025) to $46.8B (2035).",
+      "Pet humanization raises the bar for aftercare: 97% of owners call pets family; 1 in 3 spend more monthly on pets than on their own health and wellness.",
+      "Vet telehealth normalization (market ~$4.5B in 2024, ~19% CAGR) means owners now expect digital follow-up between visits.",
+      "Chronic veterinary staffing shortages make callback deflection a real dollar value for clinics, not a nice-to-have."
+    ]
+  },
+  "proofSignals": {
+    "searchDemand": [
+      { "term": "tplo surgery for dogs", "volume": "high (est.)", "growth": "steady", "note": "Dense commercial SEO content from insurers (Lemonade), cost guides, and surgical centers signals sustained high-value search demand." },
+      { "term": "tplo recovery week by week", "volume": "moderate-high (est.)", "growth": "steady", "note": "TopDog Health has ranked free weekly rehab guides here since 2007 — proof owners actively seek structured plans." },
+      { "term": "how to keep dog calm after surgery", "volume": "moderate-high (est.)", "growth": "growing (est.)", "note": "PetMD, Preventive Vet, and dvm360 all maintain dedicated articles; dvm360's is aimed at vets because clients keep asking." },
+      { "term": "dog crate rest ideas / crate rest survival", "volume": "moderate (est.)", "growth": "growing (est.)", "note": "An entire content genre exists for surviving crate rest with energetic dogs — the exact persona this product serves." }
+    ],
+    "communities": [
+      { "platform": "Facebook", "name": "Canine TPLO Recovery Support Group", "size": "not public; multiple large active groups", "signal": "Owners crowdsource day-by-day recovery advice from strangers because the discharge sheet didn't cover their situation.", "url": "https://www.facebook.com/groups/170193554660624/" },
+      { "platform": "Facebook", "name": "Canine TPLO Recovery Success & Support (Run Again Rover)", "size": "not public", "signal": "A second dedicated TPLO-recovery community — enough demand to sustain competing groups for one procedure.", "url": "https://www.facebook.com/groups/RunAgainRover/" },
+      { "platform": "Reddit", "name": "r/reactivedogs", "size": "~69K+ members", "signal": "The behavioral-complexity segment is organized and self-identifying; crate-rest-with-a-reactive-dog threads recur.", "url": "https://www.reddit.com/r/reactivedogs/" },
+      { "platform": "Web", "name": "TopDog Health community", "size": "tens of thousands of pet parents since 2007", "signal": "Owners already download structured rehab guides at scale; they've just never been personalized.", "url": "https://topdoghealth.com/rehab-guides/" }
+    ],
+    "marketStats": [
+      { "stat": "Cranial cruciate ligament (CCL) disease affects roughly 11% of the canine population — it's the most common canine orthopedic surgery driver.", "source": "JAVMA via PMC review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6938195/" },
+      { "stat": "TPLO surgery runs $3,500-$7,000+ per knee ($6,000-$10,000 at specialty hospitals); real invoices cluster at $3,517-$4,330.", "source": "Lemonade 2026 guide; VetReceipt invoice data", "url": "https://www.lemonade.com/pet/explained/tplo-surgery-dog-cost/" },
+      { "stat": "US veterinary orthopedic medicine market: ~$503M (2023), growing at 7.2% CAGR; TPLO is the largest procedure segment (~34% share).", "source": "Grand View Research", "url": "https://www.grandviewresearch.com/industry-analysis/us-veterinary-orthopedic-medicine-market-report" },
+      { "stat": "Americans spent ~$41B on veterinary care and products in 2025.", "source": "Capital One Shopping research", "url": "https://capitaloneshopping.com/research/pet-spending-statistics/" },
+      { "stat": "Vet telehealth market: ~$4.48B (2024), projected to ~$8.99B at ~19% CAGR.", "source": "Dogster pet healthcare statistics 2025", "url": "https://www.dogster.com/dog-health-care/pet-healthcare-statistics" },
+      { "stat": "Insured US cats and dogs grew ~126% from 2019 to 2023; over 41% of Gen Z pet owners carry pet insurance.", "source": "The Zebra, pet insurance trends 2025", "url": "https://www.thezebra.com/resources/personal-finance/pet-insurance-trends/" }
+    ]
+  },
+  "marketGap": {
+    "narrative": "Everyone in this market is solving the document problem or the education problem. The AI vet-software wave (SignalPET, Provet Cloud, CoVet, Lupa) makes discharge paperwork faster to produce — but the output is still a generic sheet, just generated quicker. TopDog Health solved education with excellent free rehab guides — but they're static, one-size-per-procedure PDFs unchanged in concept since 2007. Nobody adapts the protocol to this dog's behavior profile, this home's layout, and this caretaker's physical limits, and nobody manages the 8-12 week arc day-by-day with escalation guidance. The gap is a recovery operating system for the owner, sold at the moment of maximum motivation: the day their dog is scheduled for surgery.",
+    "competitors": [
+      { "name": "TopDog Health", "url": "https://topdoghealth.com/", "positioning": "Free vet-authored home rehab guides (TPLO, TTA, etc.) + product sales; the internationally recognized standard since 2007.", "weakness": "Static, generic-per-procedure PDFs. No personalization to behavior, home, or caretaker; no ongoing companion; monetizes via product sales, not software." },
+      { "name": "SignalPET (Clinical AI Suite)", "url": "https://www.signalpet.com/", "positioning": "AI discharge instructions inside the clinic workflow (launched Aug 2025).", "weakness": "Clinic-side documentation tool. Output is a faster generic sheet; no owner-side experience, no home-context intake, no recovery-arc management." },
+      { "name": "Provet Cloud / CoVet / Lupa (AI PMS wave)", "url": "https://www.co.vet/", "positioning": "AI scribes and practice management with auto-populated discharge summaries; heavily funded (Lupa raised $25M in 2025).", "weakness": "They sell to clinics and optimize clinic time. The owner's 12 weeks at home is out of scope — and their business model gives them no reason to build it." },
+      { "name": "LifeLearn ClientEd", "url": "https://www.lifelearn.com/", "positioning": "2,100+ expert-reviewed pet health handouts auto-attached to discharge instructions.", "weakness": "A bigger library of generic handouts is still generic. Content, not a plan." },
+      { "name": "Facebook groups + free articles (the real incumbent)", "url": "", "positioning": "Owners crowdsource recovery advice from TPLO groups, Reddit, PetMD, and Preventive Vet articles.", "weakness": "Unstructured, contradictory, anecdotal, and reactive — owners assemble a plan mid-crisis instead of starting with one." }
+    ]
+  },
+  "executionPlan": {
+    "mvp": [
+      "Build the intake: procedure, breed/size/age, behavior profile (crate refusal, separation anxiety, reactivity triggers, energy level), home layout (stairs, flooring, space for a pen), other pets, caretaker limits (lifting, schedule, solo vs. family).",
+      "Write the protocol template library for TPLO only, from published rehab protocols (TopDog's public guides, ACVS and dvm360 material) — reviewed and signed off by a DVM advisor.",
+      "Generate the plan: staged week-by-week schedule combining confinement setup, enrichment/mental-stimulation rotation, med/ice/PT checklist, equipment list with links, and a red-flag escalation tree that always routes to 'call your vet' with a prepared script.",
+      "Deliver as a clean printable/PDF plan plus a daily email/SMS drip that adjusts on a weekly 2-minute check-in ('how did this week go?').",
+      "Charge $39 one-time from day one — validation is people paying, not signups."
+    ],
+    "firstCustomers": [
+      "TPLO recovery Facebook groups (answer questions genuinely, offer the free crate-rest checklist, convert to paid plans).",
+      "r/reactivedogs and r/dogs crate-rest threads — the reactive-dog angle is the differentiated hook nobody else serves.",
+      "SEO: 'TPLO recovery for reactive dogs', 'crate rest small apartment', 'dog surgery recovery elderly owner' — long-tail gaps TopDog doesn't cover.",
+      "Your own vet + 2-3 local surgical/referral practices: offer the plan free to their next 20 TPLO clients in exchange for feedback and a testimonial.",
+      "Pet insurance content partnerships later — insurers already publish TPLO cost guides and have an incentive for successful recoveries."
+    ],
+    "pricing": {
+      "model": "Consumer-first: one-time personalized plan, optional recovery companion subscription for the 3-month arc. Clinic white-label license as the scale layer.",
+      "tiers": [
+        { "name": "Recovery Plan", "price": "$39 one-time", "includes": "Personalized staged plan (one dog, one procedure), printable PDF, equipment list, escalation scripts." },
+        { "name": "Recovery+ Companion", "price": "$19/mo (~3 months)", "includes": "Daily adaptive check-ins, 'is this normal?' triage guidance, plan adjustments, vet-visit prep notes." },
+        { "name": "Clinic License", "price": "$299/mo", "includes": "White-label send-home plans for unlimited patients, clinic branding, callback-deflection dashboard, tech-led 5-minute intake at discharge." }
+      ]
+    },
+    "milestones90Days": [
+      "Weeks 1-2: Recruit DVM/rehab-vet-tech advisor; run 20 owner interviews recruited from TPLO Facebook groups; draft TPLO template library.",
+      "Weeks 3-6: Ship MVP (intake → generated plan → PDF + email drip); publish the free Crate-Rest Survival Checklist as lead magnet.",
+      "Weeks 7-8: 50 free beta recoveries from the groups in exchange for structured feedback and testimonials; measure plan adherence and 'would you have paid?'",
+      "Weeks 9-12: Paid launch at $39; target 100 paid plans; start one clinic pilot (free for 90 days) instrumented to count deflected callbacks."
+    ]
+  },
+  "valueLadder": [
+    { "tier": "Lead magnet", "offer": "Reactive Dog Crate-Rest Survival Checklist + recovery countdown calculator", "price": "Free", "goal": "Email capture inside Facebook groups and SEO traffic; establishes the behavior-aware brand." },
+    { "tier": "Frontend", "offer": "Personalized Recovery Plan — one dog, one procedure, staged week-by-week", "price": "$39", "goal": "Convert the acute-panic moment; prove willingness to pay; generate testimonials." },
+    { "tier": "Core", "offer": "Recovery+ Companion — daily adaptive check-ins, triage guidance, plan adjustments for the full 8-12 weeks", "price": "$19/mo", "goal": "Recurring revenue across the recovery arc; the data flywheel on what actually works per breed/home." },
+    { "tier": "Backend", "offer": "Clinic License — white-label send-home plans, tech intake at discharge, callback-deflection dashboard", "price": "$299/mo", "goal": "Scale layer: every clinic sends dozens of recoveries/month; clinics buy back staff time and better outcomes." }
+  ],
+  "frameworks": {
+    "valueEquation": {
+      "dreamOutcome": "Dog heals on schedule with no re-injury and no second $5K surgery; the household stays sane through 12 weeks of confinement.",
+      "perceivedLikelihood": "High if vet-reviewed and clinic-endorsed — the plan reads like it was written for *your* dog, which is exactly why owners believe they can follow it.",
+      "timeDelay": "Value lands day one: the plan exists before the dog leaves the clinic, and the scariest window (first 2 weeks) is the most scripted.",
+      "effortAndSacrifice": "10-minute intake replaces weeks of 2 a.m. Googling and contradictory Facebook advice.",
+      "verdict": "Strong offer. High-stakes outcome, credible mechanism, immediate delivery, trivial effort — supports premium pricing for a digital product."
+    },
+    "marketMatrix": {
+      "quadrant": "Niche Down",
+      "explanation": "High-uniqueness insight (home-and-behavior-context personalization) aimed initially at a narrow segment (post-op orthopedic dogs, sharpened further to reactive/high-energy ones). The expansion path — all procedures, then all surgical send-home software — is what turns a Niche Down winner into a Category King candidate."
+    },
+    "acp": {
+      "audience": "Owners of the ~1M+ US dogs a year undergoing orthopedic surgery: acute 3-month need, high emotional and financial commitment ($3.5K-$7K already spent), actively searching for help.",
+      "community": "Unusually dense and findable: dedicated TPLO Facebook groups, r/reactivedogs (~69K), TopDog's long-standing audience — the watering holes are mapped before writing a line of code.",
+      "product": "A personalized plan plus daily companion that monetizes the exact moment of maximum motivation, with a natural B2B2C flip once owner demand proves out."
+    }
+  },
+  "risks": [
+    { "risk": "Liability / 'practicing veterinary medicine' line — a plan that contradicts the surgeon's instructions could harm a dog and the business.", "mitigation": "Vet-reviewed template library, DVM advisor sign-off, explicit 'supplements, never overrides, your vet's discharge instructions' framing, and every escalation path ends at 'call your clinic' with a prepared script." },
+    { "risk": "AI-PMS incumbents (SignalPET, CoVet, Provet) add 'good enough' personalization to their discharge output.", "mitigation": "They sell clinic time-savings, not owner outcomes — the owner-side companion and behavior/home context is off their roadmap. Move fast, own the owner relationship and the outcome data." },
+    { "risk": "Acute-need product: customers churn out in 3 months by design.", "mitigation": "Priced for it ($39 one-time + short subscription); durable recurring revenue comes from the clinic license, where new patients arrive weekly." },
+    { "risk": "Owners trust their vet, not an app from the internet.", "mitigation": "Clinic co-branding wedge (plans handed out at discharge), testimonials from the same Facebook groups buyers already trust, vet advisor's name on every plan." },
+    { "risk": "Search-volume estimates in this report are directional, not measured.", "mitigation": "Before building: validate with a keyword tool (Ahrefs/Keywords Everywhere) and run a $200 landing-page presale test in the TPLO groups." }
+  ],
+  "sources": [
+    { "title": "IdeaBrowser — Reactive Dog Post-Op Recovery Planner (idea of the day, 2026-07-17)", "url": "https://www.ideabrowser.com/idea/reactive-dog-post-op-recovery-planner-6cade9c7" },
+    { "title": "TPLO patient selection and outcomes (PMC / JAVMA-cited ~11% CCL incidence)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6938195/" },
+    { "title": "Lemonade — TPLO Surgery for Dogs Cost (2026 guide)", "url": "https://www.lemonade.com/pet/explained/tplo-surgery-dog-cost/" },
+    { "title": "VetReceipt — Dog TPLO surgery real invoice data", "url": "https://vetreceipt.com/costs/dog-tplo-surgery" },
+    { "title": "Grand View Research — U.S. Veterinary Orthopedic Medicine Market", "url": "https://www.grandviewresearch.com/industry-analysis/us-veterinary-orthopedic-medicine-market-report" },
+    { "title": "SNS Insider — Canine Orthopedics Market ($367.9M 2023 → $765M 2032)", "url": "https://www.snsinsider.com/reports/canine-orthopedics-market-6225" },
+    { "title": "SignalPET — Clinical AI Suite / AI discharge instructions launch", "url": "https://www.signalpet.com/articles/the-top-10-veterinary-software-tools/" },
+    { "title": "Shepherd — AI-powered veterinary PMS comparison (Lupa funding, CoVet growth)", "url": "https://www.shepherd.vet/blog/8-best-ai-powered-veterinary-practice-management-software-platforms-2026-comparison-guide/" },
+    { "title": "TopDog Health — TPLO Home Rehab Guide", "url": "https://topdoghealth.com/rehab_guides/tplo-home-rehab-guide/" },
+    { "title": "dvm360 — Crate expectations: realistic strategies for postoperative confinement", "url": "https://www.dvm360.com/view/crate-expectations-realistic-strategies-postoperative-confinement" },
+    { "title": "Preventive Vet — How to survive crate rest with an energetic dog", "url": "https://www.preventivevet.com/dogs/how-to-survive-crate-rest-with-your-dog" },
+    { "title": "Capital One Shopping — Pet spending statistics ($41B vet care 2025)", "url": "https://capitaloneshopping.com/research/pet-spending-statistics/" },
+    { "title": "Dogster — Pet healthcare statistics 2025 (vet telehealth market size)", "url": "https://www.dogster.com/dog-health-care/pet-healthcare-statistics" },
+    { "title": "The Zebra — Pet insurance trends 2025 (+126% insured pets 2019-2023)", "url": "https://www.thezebra.com/resources/personal-finance/pet-insurance-trends/" },
+    { "title": "GM Insights — Pet Insurance Market ($14.2B 2025 → $46.8B 2035)", "url": "https://www.gminsights.com/industry-analysis/pet-insurance-market" },
+    { "title": "subredditstats — r/reactivedogs (~69K members)", "url": "https://subredditstats.com/r/reactivedogs" }
+  ]
+}

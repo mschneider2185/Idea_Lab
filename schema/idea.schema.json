@@ -1,0 +1,269 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/mschneider2185/Hello_World/schema/idea.schema.json",
+  "title": "Idea Research Report",
+  "description": "Structured deep-research report for a startup/product idea, modeled on the IdeaBrowser report format (scores, why-now, proof & signals, market gap, execution plan, value ladder, and framework analyses).",
+  "type": "object",
+  "required": ["slug", "title", "oneLiner", "status", "researchedAt"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "URL-safe identifier; must match the idea's folder name under ideas/"
+    },
+    "name": {
+      "type": "string",
+      "description": "Optional working product name (e.g. 'Pawscript')"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable idea title"
+    },
+    "oneLiner": {
+      "type": "string",
+      "description": "One-sentence pitch"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["seed", "researched", "validating", "building", "shipped", "parked"],
+      "description": "seed = captured but not researched; researched = full report done; validating/building/shipped/parked = lifecycle after research"
+    },
+    "researchedAt": {
+      "type": "string",
+      "description": "ISO date the research was last refreshed (YYYY-MM-DD)"
+    },
+    "tags": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "description": "e.g. B2B SaaS, marketplace, consumer app" },
+        "market": { "type": "string" },
+        "target": { "type": "string", "description": "Primary buyer/user" },
+        "mainCompetitor": { "type": "string" },
+        "trend": { "type": "string", "description": "e.g. Growing niche, Emerging behavior, Established market" }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "description": "0-10 scores with a one-line justification each",
+      "properties": {
+        "opportunity": { "$ref": "#/definitions/score" },
+        "problemSeverity": { "$ref": "#/definitions/score" },
+        "feasibility": { "$ref": "#/definitions/score" },
+        "whyNow": { "$ref": "#/definitions/score" }
+      }
+    },
+    "businessFit": {
+      "type": "object",
+      "properties": {
+        "revenuePotential": {
+          "type": "object",
+          "properties": {
+            "rating": { "type": "string", "description": "$, $$, or $$$" },
+            "note": { "type": "string", "description": "e.g. '$1M-$10M ARR potential; niche B2B pricing power'" }
+          }
+        },
+        "executionDifficulty": { "$ref": "#/definitions/score" },
+        "goToMarket": { "$ref": "#/definitions/score" },
+        "founderFit": { "type": "string", "description": "Who is best positioned to build this — and why you specifically are/aren't" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "problem": { "type": "string" },
+        "solution": { "type": "string" },
+        "wedge": { "type": "string", "description": "The narrow entry point that wins first" }
+      }
+    },
+    "whyNow": {
+      "type": "object",
+      "properties": {
+        "narrative": { "type": "string" },
+        "drivers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Discrete timing drivers (tech shifts, behavior shifts, regulatory, cost curves)"
+        }
+      }
+    },
+    "proofSignals": {
+      "type": "object",
+      "properties": {
+        "searchDemand": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["term"],
+            "properties": {
+              "term": { "type": "string" },
+              "volume": { "type": "string", "description": "Monthly search volume (mark estimates, e.g. '~14K/mo (est.)')" },
+              "growth": { "type": "string", "description": "e.g. '+45% YoY (est.)'" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "communities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["platform", "name"],
+            "properties": {
+              "platform": { "type": "string", "description": "Reddit, Facebook, YouTube, Discord, forum..." },
+              "name": { "type": "string" },
+              "size": { "type": "string" },
+              "signal": { "type": "string", "description": "What the community's activity proves about the pain" },
+              "url": { "type": "string" }
+            }
+          }
+        },
+        "marketStats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["stat"],
+            "properties": {
+              "stat": { "type": "string" },
+              "source": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "marketGap": {
+      "type": "object",
+      "properties": {
+        "narrative": { "type": "string", "description": "What everyone in the market gets wrong; the hole this idea fills" },
+        "competitors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" },
+              "positioning": { "type": "string" },
+              "weakness": { "type": "string", "description": "The gap they leave open" }
+            }
+          }
+        }
+      }
+    },
+    "executionPlan": {
+      "type": "object",
+      "properties": {
+        "mvp": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Concrete steps to a sellable v1"
+        },
+        "firstCustomers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Exactly where the first 10-100 customers come from"
+        },
+        "pricing": {
+          "type": "object",
+          "properties": {
+            "model": { "type": "string" },
+            "tiers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "price": { "type": "string" },
+                  "includes": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "milestones90Days": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "valueLadder": {
+      "type": "array",
+      "description": "Offer ladder from free lead magnet to premium backend",
+      "items": {
+        "type": "object",
+        "required": ["tier", "offer"],
+        "properties": {
+          "tier": { "type": "string", "description": "e.g. Lead magnet, Frontend, Core offer, Backend" },
+          "offer": { "type": "string" },
+          "price": { "type": "string" },
+          "goal": { "type": "string", "description": "What this rung exists to do (capture, convert, expand...)" }
+        }
+      }
+    },
+    "frameworks": {
+      "type": "object",
+      "properties": {
+        "valueEquation": {
+          "type": "object",
+          "description": "Hormozi value equation: (dream outcome x likelihood) / (time delay x effort)",
+          "properties": {
+            "dreamOutcome": { "type": "string" },
+            "perceivedLikelihood": { "type": "string" },
+            "timeDelay": { "type": "string" },
+            "effortAndSacrifice": { "type": "string" },
+            "verdict": { "type": "string" }
+          }
+        },
+        "marketMatrix": {
+          "type": "object",
+          "description": "Unique insight x market size quadrant",
+          "properties": {
+            "quadrant": { "type": "string", "description": "Category King, Niche Down, Shark Tank, or Low Impact" },
+            "explanation": { "type": "string" }
+          }
+        },
+        "acp": {
+          "type": "object",
+          "description": "Audience-Community-Product fit",
+          "properties": {
+            "audience": { "type": "string" },
+            "community": { "type": "string" },
+            "product": { "type": "string" }
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["risk"],
+        "properties": {
+          "risk": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Every external claim in the report should trace to one of these",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "score": {
+      "type": "object",
+      "required": ["score"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 10 },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

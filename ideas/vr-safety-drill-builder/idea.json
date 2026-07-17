@@ -1,0 +1,22 @@
+{
+  "slug": "vr-safety-drill-builder",
+  "name": "DryrunVR",
+  "title": "VR Safety Drill Builder for High-Risk Crews",
+  "oneLiner": "Self-serve platform that converts a factory's existing written SOPs into immersive VR safety drills — no $50K custom build.",
+  "status": "seed",
+  "researchedAt": "2026-07-17",
+  "tags": {
+    "type": "B2B SaaS",
+    "market": "Industrial safety / training",
+    "target": "Safety managers at 50-500 employee manufacturers, warehouses, contractors",
+    "trend": "AI + VR cost collapse"
+  },
+  "summary": {
+    "problem": "Mid-market industrial companies carry serious workplace-safety liability every shift, but training budgets only cover slideshows and sign-off sheets. Custom VR training starts around $50K per build; generic VR libraries feel like video games built around the wrong equipment. Safety managers choose between compliance theater and enterprise price tags.",
+    "solution": "Upload a confined-space entry procedure or lockout-tagout protocol; the system parses steps, hazards, and decision points, then assembles VR drills from pre-built asset libraries (machinery, PPE, electrical panels, warehouse environments) that mirror what workers actually walk past on shift. Floor managers author new exercises without code.",
+    "wedge": "One procedure type (lockout-tagout) for one vertical (mid-market manufacturing) where OSHA citations are common and painful."
+  },
+  "sources": [
+    { "title": "IdeaBrowser — Idea of the Day email, 2026-06-20 (Factory VR trainer)", "url": "https://www.ideabrowser.com/idea/vr-safety-drill-builder-for-high-risk-crews-4a2d8b27" }
+  ]
+}
