@@ -93,7 +93,7 @@
   "executionPlan": {
     "mvp": [
       "Already built (evidence pass, 2026-07-18): full CRUD for frac jobs/haulers/lanes/scenarios/schedules/allocations; drag-and-drop Gantt with lane cascading; Excel-like allocation grid with bulk edit, drag-to-fill, and three summary footer rows; real-time conflict detection; scenario cloning with sandbox isolation; truck-demand breakdowns with overrides; NPT journal; CSV/XLSX import and export; role-based planner/viewer access.",
-      "Gate 0 (before any product motion): remediate the public-repo data exposure and obtain written clarity on IP/ownership and employment conflict — see fit report.",
+      "Gate 0a (data hygiene): DONE 2026-07-18 — repo private, history republished clean, verified. Gate 0b (written IP/ownership and employment-conflict clarity) still blocks any product motion — see fit report.",
       "Quality floor: delete dead scaffolding, fix the two live type errors, stand up a test harness with the truck-demand engine covered first (it's the money math).",
       "Replace env-var usernames with real authentication and per-org tenancy — the difference between an internal tool and a sellable product.",
       "Audit trail + change history (already on the roadmap) — table stakes for multi-user planning trust."
@@ -113,7 +113,7 @@
       ]
     },
     "milestones90Days": [
-      "Weeks 1-2: Gate 0 — repo containment (private + history rewrite) and the IP/conflict memo. Nothing else matters until this is done.",
+      "Weeks 1-2: Gate 0b — the IP/conflict memo (Gate 0a, repo containment, closed 2026-07-18). Nothing customer-facing matters until this is done.",
       "Weeks 3-6: Quality floor — dead code deleted, type-clean, test harness with demand-engine coverage, CI green gate.",
       "Weeks 7-10: Real auth + tenancy; audit trail.",
       "Weeks 11-12: Re-run /idea-fit. If Gate 0 resolved favorably, this verdict upgrades and the pilot search starts; if not, FleetSync remains a work-machine internal tool and a portfolio proof, which is also a fine outcome."
@@ -146,7 +146,7 @@
   },
   "risks": [
     { "risk": "IP/ownership ambiguity: the tool originated inside an employer's operations; the employer may have claims on it, and selling in the employer's industry while employed is a conflict minefield.", "mitigation": "Written clarity before any product motion — employment agreement review, possibly a formal carve-out. This is Gate 0 alongside exposure remediation; the 90-day plan does nothing customer-facing before it." },
-    { "risk": "Public-repo data exposure: real operational data from the origin deployment exists in the public repository's current tree and full history.", "mitigation": "Immediate containment (repo private), then history rewrite removing the export file, attached assets, and historical seeds; re-verify with a sweep before any re-publication." },
+    { "risk": "Repo data exposure (RESOLVED 2026-07-18): real operational data from the origin deployment had survived in the public repo's tree and full history despite an earlier tip-only scrub.", "mitigation": "Done — repo made private (zero forks/stars), contaminated files removed, docs genericized, history republished from a fresh root, verified clean via full-history sweep of a fresh clone. Standing rule: exports and scratch assets are gitignored; re-run the sweep before any future re-publication." },
     { "risk": "Quality foundation lags the feature set: zero tests, live type errors, dead scaffolding — risky ground for a tool whose output allocates $10K/hr resources.", "mitigation": "Test harness starting with the truck-demand engine, type-clean gate in CI, delete the boilerplate." },
     { "risk": "Incumbent response: PropX/Atlas could ship operator-neutral planning views if the niche proves out.", "mitigation": "Their business models resist neutrality (software exists to move their assets); speed plus operator-side trust is the moat, and Appalachia is under-served by Permian-centric incumbents." },
     { "risk": "Single-buyer-type concentration in a cyclical industry: gas activity downturns freeze oilfield software budgets.", "mitigation": "Price per fleet (scales down gracefully), keep the tool valuable at planning time even when activity slows — scenario planning matters most when schedules are in flux." }
@@ -170,7 +170,7 @@
     "auditRef": "No formal /project-audit exists. Grounded in a scoped evidence pass (2026-07-18): fresh clone of the public GitHub repo, README-vs-code review, TypeScript check, test/LOC census, 215-commit history review, and a data-scrub verification sweep. A full /project-audit is recommended before any product motion.",
     "verdict": "PARK",
     "confidence": "High",
-    "verdictNote": "Park the public product ambition — not the product. Two non-market gates must clear first: (1) the public repo currently exposes real operational data from the origin deployment, in the current tree and throughout history — containment and a history rewrite are P0; (2) the tool was born inside an employer's operations, so IP/ownership and employment-conflict clarity must exist in writing before a single customer conversation. Both are resolvable; if they resolve favorably, the market timing (2026-27 LNG-driven completions ramp) and the open operator-side planning slot likely upgrade this to BUILD ON at the scheduled re-run. The internal version continuing on the work machine is unaffected by this verdict.",
+    "verdictNote": "Park the public product ambition — not the product. Gate 0a (data hygiene) CLOSED 2026-07-18: repo set private (zero forks/stars, so nothing was copied out), contaminated files removed, history republished from a fresh root, verified clean by a full-history sweep of a fresh clone. Gate 0b remains OPEN: the tool was born inside an employer's operations, so IP/ownership and employment-conflict clarity must exist in writing before a single customer conversation — that alone holds the verdict at PARK. If 0b resolves favorably, the market timing (2026-27 LNG-driven completions ramp) and the open operator-side planning slot likely upgrade this to BUILD ON at the scheduled re-run. The internal version continuing on the work machine is unaffected by this verdict.",
     "wedgeCheck": "The product nails the researched wedge with unusual precision — it was built by the wedge persona (a sand-logistics coordinator) inside a live completions program, and the feature set encodes the job's real edge cases (lane cascading, NPT sub-causes, sandbox scenario isolation, storage-type demand overrides). There is no product drift. The drift risk is positional, not product: the personal/public fork currently has no servable customer until the IP and exposure gates clear, and pretending otherwise would aim a good product at a legal wall.",
     "completion": [
       { "aspect": "Planning Gantt with drag-and-drop, lane cascading, zoom levels", "status": "shipped", "evidence": "README verified against client/src/pages/dashboard.tsx and workload.tsx; commit history shows iterative refinement through 2026-07" },
@@ -185,7 +185,7 @@
       { "aspect": "Audit trail / change history", "status": "missing", "evidence": "README 'What's next'; required for multi-user planning trust" },
       { "aspect": "Analytics & reporting dashboards", "status": "missing", "evidence": "README 'What's next'; the retention rung of the value ladder" },
       { "aspect": "Mobile-responsive experience", "status": "missing", "evidence": "README 'What's next'; field users live on phones and tablets" },
-      { "aspect": "Data hygiene of the public repo", "status": "missing", "evidence": "Real operational export in the current tree; origin-era seeds, an internal PRD PDF, and branding assets throughout the 215-commit public history (specifics deliberately omitted here)" }
+      { "aspect": "Data hygiene of the repo", "status": "shipped", "evidence": "Remediated 2026-07-18: repo private, contaminated export + scratch-asset folder removed, doc references genericized, seed data confirmed fictional, history republished from a fresh root (215 commits → 1); verified by a full-history sweep of a fresh clone. Prior history retained in a local mirror backup only" }
     ],
     "scopeRulings": [
       { "observation": "Replit scaffolding (chat/image integrations, boilerplate package name 'rest-express') rode along from the app's origin and accounts for 13 of 15 type errors.", "ruling": "Cut — delete server/replit_integrations and rename the package; it's dead weight distorting the health signal." },
@@ -234,7 +234,7 @@
       "rationale": "The stack is fine and the product works; the debt is hygiene, not architecture. A fit report never proposes a rewrite — it proposes deleting the boilerplate that came with the app's origin and building the missing quality floor inside what exists."
     },
     "backlog": [
-      { "title": "Gate 0a: repo containment + history rewrite", "description": "Private now; git filter-repo removing the export file, origin-era seeds, and attached internal docs; full-history verification sweep after.", "priority": "P0" },
+      { "title": "Gate 0a: repo containment + history rewrite — DONE 2026-07-18", "description": "Completed: repo private, contaminated files removed, history republished from a fresh root (215 commits → 1), verified clean by full-history sweep. Prior history in a local mirror backup only.", "priority": "P0" },
       { "title": "Gate 0b: written IP/conflict position", "description": "Employment agreement review and a one-page memo on what may be built, owned, and sold. Non-code, gates everything customer-facing.", "priority": "P0" },
       { "title": "Delete Replit boilerplate + fix live type errors", "description": "Remove server/replit_integrations (13 of 15 tsc errors), fix workload.tsx startDate/endDate errors, rename package.", "priority": "P0" },
       { "title": "Test harness with demand-engine coverage", "description": "Vitest; first suites on truck-demand math, allocation totals, lane cascading; CI gate on test+typecheck.", "priority": "P0" },
