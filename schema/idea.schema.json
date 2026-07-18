@@ -217,7 +217,7 @@
           "type": "object",
           "description": "Unique insight x market size quadrant",
           "properties": {
-            "quadrant": { "type": "string", "description": "Category King, Niche Down, Shark Tank, or Low Impact" },
+            "quadrant": { "type": "string", "description": "Category King, Niche Down, Shark Tank, or Low Impact (classic vocabulary; the live IdeaBrowser matrix now uses Tech Novelty / Category King / Low Impact / Commodity Play — see research/ideabrowser-teardown.md)" },
             "explanation": { "type": "string" }
           }
         },
@@ -255,9 +255,66 @@
         }
       }
     },
+    "fitReport": {
+      "type": "object",
+      "description": "Reality diff between this idea's research and an actual in-progress project — produced by the /idea-fit skill from a project audit plus repo evidence. The market-grounded verdict on real code.",
+      "properties": {
+        "generatedAt": { "type": "string", "description": "ISO date (YYYY-MM-DD)" },
+        "projectPath": { "type": "string", "description": "Local path of the audited project (no secrets/URLs)" },
+        "auditRef": { "type": "string", "description": "The audit document this fit report is grounded in, plus any post-audit evidence window" },
+        "verdict": {
+          "type": "string",
+          "enum": ["BUILD ON", "REFOCUS", "PIVOT", "PARK"],
+          "description": "BUILD ON = keep going as aimed; REFOCUS = right product, wrong aim/scope; PIVOT = point the asset elsewhere; PARK = stop investing, preserve"
+        },
+        "confidence": { "type": "string", "enum": ["High", "Medium", "Low"] },
+        "verdictNote": { "type": "string", "description": "Why this verdict, and the single most important condition attached to it" },
+        "wedgeCheck": { "type": "string", "description": "Does what's built serve the researched wedge/target user? Name any drift and whether it's documented" },
+        "completion": {
+          "type": "array",
+          "description": "One row per researched core capability or competitor must-have",
+          "items": {
+            "type": "object",
+            "required": ["aspect", "status"],
+            "properties": {
+              "aspect": { "type": "string" },
+              "status": { "type": "string", "enum": ["shipped", "partial", "missing"] },
+              "evidence": { "type": "string", "description": "File, commit, or audit citation" }
+            }
+          }
+        },
+        "scopeRulings": {
+          "type": "array",
+          "description": "Audit scope-creep observations turned into rulings",
+          "items": {
+            "type": "object",
+            "required": ["observation", "ruling"],
+            "properties": {
+              "observation": { "type": "string" },
+              "ruling": { "type": "string", "description": "keep / cut / defer — with the research-tied reason" }
+            }
+          }
+        },
+        "monetization": { "type": "string", "description": "Which value-ladder rungs exist in code, and what the research implies about that" },
+        "scoreAdjustments": {
+          "type": "array",
+          "description": "Report scores re-graded with repo evidence the original research couldn't have",
+          "items": {
+            "type": "object",
+            "required": ["dimension", "reason"],
+            "properties": {
+              "dimension": { "type": "string" },
+              "was": { "type": "number" },
+              "now": { "type": "number" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
     "buildKit": {
       "type": "object",
-      "description": "Shovel-ready build package generated from a researched idea — the IdeaBrowser 'Idea Builder' equivalent. Produced by the /idea-build skill, never hand-authored from imagination.",
+      "description": "Shovel-ready build package generated from a researched idea — the IdeaBrowser 'Idea Builder' equivalent. Produced by the /idea-build skill (greenfield) or /idea-fit (brownfield, scoped to the gap), never hand-authored from imagination.",
       "properties": {
         "generatedAt": { "type": "string", "description": "ISO date (YYYY-MM-DD)" },
         "prd": {

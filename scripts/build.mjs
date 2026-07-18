@@ -411,6 +411,56 @@ function renderIdea(idea) {
     );
   }
 
+  // Fit report (reality diff from /idea-fit)
+  if (idea.fitReport) {
+    const fr = idea.fitReport;
+    const inner = [];
+    if (fr.verdict) {
+      inner.push(`<div class="callout"><strong>Verdict: ${esc(fr.verdict)}</strong>${
+        fr.confidence ? ` (confidence: ${esc(fr.confidence)})` : ""
+      }${fr.verdictNote ? ` — ${esc(fr.verdictNote)}` : ""}</div>`);
+    }
+    if (fr.wedgeCheck) inner.push(`<h3>Wedge check</h3>${paras(fr.wedgeCheck)}`);
+    if (fr.completion?.length) {
+      inner.push(`<h3>Completion vs. the research</h3>`);
+      const mark = { shipped: "✅ shipped", partial: "🟡 partial", missing: "❌ missing" };
+      inner.push(
+        table(
+          ["Capability", "Status", "Evidence"],
+          fr.completion.map((c) => [esc(c.aspect), mark[c.status] || esc(c.status), esc(c.evidence || "")])
+        )
+      );
+    }
+    if (fr.scopeRulings?.length) {
+      inner.push(`<h3>Scope rulings</h3>`);
+      inner.push(
+        table(
+          ["Observation", "Ruling"],
+          fr.scopeRulings.map((r) => [esc(r.observation), esc(r.ruling)])
+        )
+      );
+    }
+    if (fr.monetization) inner.push(`<h3>Monetization reality</h3>${paras(fr.monetization)}`);
+    if (fr.scoreAdjustments?.length) {
+      inner.push(`<h3>Score adjustments (evidence-based)</h3>`);
+      inner.push(
+        table(
+          ["Dimension", "Was", "Now", "Why"],
+          fr.scoreAdjustments.map((a) => [
+            esc(a.dimension),
+            a.was ?? "—",
+            a.now ?? "—",
+            esc(a.reason || ""),
+          ])
+        )
+      );
+    }
+    const sub = [fr.generatedAt && `Generated ${fr.generatedAt}`, fr.auditRef && `Grounded in ${fr.auditRef}`]
+      .filter(Boolean)
+      .join(" · ");
+    parts.push(section("Fit report — research vs. reality", inner.join("\n"), sub));
+  }
+
   // Build kit
   if (idea.buildKit) {
     const bk = idea.buildKit;
