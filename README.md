@@ -79,6 +79,7 @@ adds a "Build kit" section to its report page.
 | Idea | Status |
 |---|---|
 | [Reactive Dog Post-Op Recovery Planner](ideas/reactive-dog-post-op-recovery-planner/idea.json) ("Pawscript") | researched |
+| [Self-Hosted Household Finance Command Center](ideas/household-finance-command-center/idea.json) ("FEV") | building — with a [fit report](ideas/household-finance-command-center/idea.json) diffing the real repo against the research |
 | [VR Safety Drill Builder for High-Risk Crews](ideas/vr-safety-drill-builder/idea.json) | seed |
 | [Backyard Home (ADU) Feasibility Reports](ideas/backyard-adu-feasibility-reports/idea.json) | seed |
 

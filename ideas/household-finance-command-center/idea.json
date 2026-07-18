@@ -1,0 +1,253 @@
+{
+  "slug": "household-finance-command-center",
+  "name": "FEV (Financial Escape Velocity)",
+  "title": "Self-Hosted Household Finance Command Center",
+  "oneLiner": "An outcome-oriented, data-owning finance OS for one household — cash-flow truth, debt payoff to an exact date, and W-2 escape-velocity tracking, without the $100-$199/yr subscription or handing your transactions to a VC-funded cloud.",
+  "status": "building",
+  "researchedAt": "2026-07-18",
+  "tags": {
+    "type": "Self-hosted web app",
+    "market": "Personal finance software",
+    "target": "Data-owning households; self-hosters in debt-payoff mode",
+    "mainCompetitor": "Monarch Money / Actual Budget",
+    "trend": "Post-Mint migration + subscription fatigue"
+  },
+  "scores": {
+    "opportunity": {
+      "score": 6,
+      "note": "The personal-finance-app market is huge and growing (~$31.7B 2025, ~20.8% CAGR per Research Nester — estimates vary widely by source), but the self-hosted slice monetizes poorly. The opportunity is real and asymmetric: high personal value + portfolio asset + optionality, modest direct revenue."
+    },
+    "problemSeverity": {
+      "score": 7,
+      "note": "Mint's 2024 shutdown orphaned 3.6M+ users into $95-$199/yr subscriptions; YNAB went from $60 one-time to $109/yr; the average household juggles 20+ subscriptions. Real pain — but free alternatives (Rocket free tier, Actual Budget) cap how acute it gets."
+    },
+    "feasibility": {
+      "score": 9,
+      "note": "Not speculative — it exists. 161/161 tests passing across 21 files (verified npm test, 2026-07-18), clean deploy on Vercel, feature-complete original roadmap. Remaining gap is bank sync + mobile, both scoped."
+    },
+    "whyNow": {
+      "score": 7,
+      "note": "Post-Mint migration is still settling, Maybe Finance's July 2025 archive left 'polished self-hosted finance' unserved, SimpleFIN makes user-paid bank sync viable at $15/yr, and AI-assisted solo development collapsed the build cost — FEV itself is the proof."
+    }
+  },
+  "businessFit": {
+    "revenuePotential": {
+      "rating": "$",
+      "note": "Honest rating: self-hosted personal finance has no proven direct-revenue engine (Actual Budget is free OSS; Maybe spent ~$1M, open-sourced, then pivoted B2B). Realistic value: $99-$199/yr in avoided subscriptions per household, a credible portfolio asset, and optional future rungs (hosted instance, supporter license)."
+    },
+    "executionDifficulty": {
+      "score": 3,
+      "note": "Mostly built and tested. The remaining hard 10% — reliable bank sync and a mobile-quality experience — is well-understood work with a proven path (SimpleFIN, responsive pass)."
+    },
+    "goToMarket": {
+      "score": 4,
+      "note": "The audience is findable (r/selfhosted ~798K, r/ynab ~208K, Actual's 26K+ GitHub stars prove the channel) but converts to attention, not dollars. As a personal tool, GTM is already done: the household uses it daily."
+    },
+    "founderFit": "Strong for an operations-minded solo builder living the exact problem — the app's premise (escape W-2 dependence, run the household like a CFO) is the builder's own daily use case, which is why it shipped. Tension to manage: a personal self-hosted tool produces freedom and savings, not the recurring revenue a product-shaped effort would chase. Decide which game this is deliberately."
+  },
+  "summary": {
+    "problem": "Mint's shutdown pushed millions of households into paid trackers — Monarch ($99.99-$199/yr), YNAB ($109/yr), Copilot (~$95/yr), Rocket Money ($7-$14/mo premium) — that still keep the data in their cloud and optimize for upsells. The self-hosted refuges (Firefly III, Actual Budget) are ledgers: excellent at recording and enveloping money, but silent on outcomes. None of them answers the questions a household actually runs on: are we structurally in deficit, when exactly are the debts gone, and how far are we from replacing the W-2.",
+    "solution": "FEV is a self-hosted household finance command center: CSV/OFX import with vocabulary-aware categorization, subscription and price-hike detection, envelope-style rollover, debt-payoff simulators that produce an exact payoff date, net-worth tracking, and an 'escape velocity' pillar that tracks progress toward income replacement — multi-tenant with RLS so a household shares one instance, deployable on Vercel + Supabase for ~$0.",
+    "wedge": "One household first — the builder's own, in daily use, which already validated the core loop. The expansion wedge is not 'replace Rocket Money for everyone': it's the outcome-oriented self-hosted niche — data-owning households in debt-payoff mode who want a CFO dashboard, not another budget ledger — a segment the incumbents structurally can't serve because their revenue requires your subscription or your data."
+  },
+  "whyNow": {
+    "narrative": "The category just reshuffled. Intuit killed Mint in early 2024 and orphaned its 3.6M+ users; Monarch rode the wave to 20x subscriber growth and a $75M Series B at an $850M valuation — proving both the demand and the price umbrella ($100-$200/yr) that makes 'own it yourself' resonate. Meanwhile the one credible attempt at a polished open-source finance app, Maybe, burned ~$1M, open-sourced, and archived its repo in July 2025 to pivot B2B — leaving the niche validated but unserved by anyone with venture economics. The two enablers that made self-hosting practical arrived at the same time: SimpleFIN Bridge does user-paid bank sync at $15/yr (the model Actual Budget adopted), and AI-assisted development lets one person on evenings ship what used to take a team.",
+    "drivers": [
+      "Mint shutdown (early 2024): 3.6M+ users orphaned; Credit Karma didn't absorb the budgeting use case; migration demand is still circulating.",
+      "Price umbrella: Monarch $99.99-$199/yr, YNAB $109/yr (up from $60 one-time), Copilot ~$95/yr — recurring cost makes a $0 self-hosted alternative a standing pitch.",
+      "Subscription fatigue: the average household carries 20+ subscriptions; 'one less' is now an emotional argument, not just a financial one.",
+      "SimpleFIN Bridge ($1.50/mo / $15/yr, user-paid): closes the bank-sync gap that kept self-hosted apps CSV-only — proven in production by Actual Budget.",
+      "Maybe Finance archived July 2025 after ~$1M spent — the demand persists (community fork 'Sure'), but no funded company is chasing it; solo-operator economics fit where VC economics failed.",
+      "AI-assisted solo development: FEV reached feature-completeness on nights and weekends — the build cost that justified subscriptions collapsed."
+    ]
+  },
+  "proofSignals": {
+    "searchDemand": [
+      { "term": "mint alternative", "volume": "high (est.)", "growth": "spiked 2024, sustained (est.)", "note": "An entire review-site genre ('best Mint replacements') persists into 2026 — commercial intent is still being farmed, so demand is still there." },
+      { "term": "self hosted budget app", "volume": "moderate (est.)", "growth": "growing (est.)", "note": "Actual Budget, Firefly III, and 'self-hosted finance' listicles rank and refresh continuously; r/selfhosted threads on finance apps recur monthly." },
+      { "term": "ynab alternative / ynab price increase", "volume": "moderate (est.)", "growth": "recurring on each price change", "note": "YNAB's $60→$109/yr arc is one of the most-cited complaints in its own community — each hike sheds method-loyal users looking for an exit that keeps the method." }
+    ],
+    "communities": [
+      { "platform": "Reddit", "name": "r/selfhosted", "size": "~798K members", "signal": "Finance-app threads recur constantly; data ownership is the community's core value — exactly FEV's pitch.", "url": "https://subredditstats.com/r/selfhosted" },
+      { "platform": "Reddit", "name": "r/ynab", "size": "~208K members", "signal": "Method-loyal budgeters with documented price-increase resentment — the most convertible paid-app audience.", "url": "https://subredditstats.com/r/ynab" },
+      { "platform": "GitHub", "name": "Actual Budget", "size": "26K+ stars", "signal": "Proof that a self-hosted finance app can build a large, active community — and proof of the channel (OSS + Docker + docs).", "url": "https://github.com/actualbudget/actual" },
+      { "platform": "GitHub", "name": "Maybe → 'Sure' community fork", "size": "archived upstream, active fork", "signal": "Demand for a *polished* self-hosted finance app outlived the company that built it — the niche is real; the business model was the casualty.", "url": "https://github.com/maybe-finance/maybe" }
+    ],
+    "marketStats": [
+      { "stat": "Personal finance apps market ~$31.7B (2025), projected ~$173.6B by 2035 (~20.8% CAGR); estimates vary widely across research houses.", "source": "Research Nester", "url": "https://www.researchnester.com/reports/personal-finance-apps-market/8243" },
+      { "stat": "Mint served 3.6M+ active users at peak; shut down by Intuit in early 2024.", "source": "TechFundingNews", "url": "https://techfundingnews.com/personal-finance-app-monarch-rises-with-75m-after-mints-meltdown-a-soonicorn-on-cards/" },
+      { "stat": "Monarch raised a $75M Series B at an $850M valuation (May 2025) after ~20x subscriber growth post-Mint.", "source": "CNBC", "url": "https://www.cnbc.com/2025/05/23/personal-finance-app-monarch-raises-75-million.html" },
+      { "stat": "Current pricing: Monarch Core $99.99/yr, Monarch Plus $199/yr; Rocket Money premium $7-$14/mo (pay-what-you-want); YNAB $109/yr.", "source": "Wall Street Survivor / vendor pricing pages", "url": "https://www.wallstreetsurvivor.com/rocket-money-vs-monarch/" },
+      { "stat": "SimpleFIN Bridge: $1.50/mo or $15/yr, user-paid, read-only bank sync for self-hosted apps (used by Actual Budget); syncs ~1x/day.", "source": "SimpleFIN / Actual Budget docs", "url": "https://actualbudget.org/docs/advanced/bank-sync/simplefin/" },
+      { "stat": "Maybe Finance spent ~$1M building a personal finance app, open-sourced it, archived the repo July 27 2025, and pivoted to B2B.", "source": "GitHub (maybe-finance/maybe)", "url": "https://github.com/maybe-finance/maybe" }
+    ]
+  },
+  "marketGap": {
+    "narrative": "The paid tier optimizes convenience plus monetization — Rocket Money's real business is bill-negotiation and concierge upsells; Monarch's is the subscription — and both require your data in their cloud. The self-hosted tier optimizes privacy but ships ledgers: Firefly III is double-entry bookkeeping for accountant-brains, Actual is envelope budgeting. Nobody self-hosted answers outcome questions — the exact debt-freedom date, the structural surplus/deficit, the distance to replacing a W-2. That outcome layer is FEV's differentiation, and it's structurally defensible: incumbents can't follow without abandoning their revenue model (paid apps) or their method identity (envelope/double-entry OSS).",
+    "competitors": [
+      { "name": "Monarch Money", "url": "https://www.monarch.com/", "positioning": "The Mint heir: polished, couple-friendly, $99.99-$199/yr, $75M Series B.", "weakness": "Subscription forever, data in their cloud, no self-host path, and no outcome framing — it tracks money, it doesn't answer 'when are we free.'" },
+      { "name": "Rocket Money", "url": "https://www.rocketmoney.com/", "positioning": "Free tier + $7-$14/mo premium; bill negotiation and subscription-cancellation concierge.", "weakness": "The app is an acquisition funnel for negotiation fees; budgeting depth is shallow; data posture is the product." },
+      { "name": "YNAB", "url": "https://www.ynab.com/", "positioning": "Method-loyal envelope budgeting, $109/yr.", "weakness": "Price rose from $60 one-time to $109/yr — documented community resentment; envelope method only; no debt-date or income-replacement outcomes." },
+      { "name": "Actual Budget", "url": "https://github.com/actualbudget/actual", "positioning": "Free, local-first OSS envelope budgeting; 26K+ stars; SimpleFIN/GoCardless sync.", "weakness": "A (very good) budget ledger, not a household command center — no goals engine, no debt-payoff-to-date simulation, no escape-velocity concept." },
+      { "name": "Firefly III", "url": "https://www.firefly-iii.org/", "positioning": "The veteran self-hosted finance manager; double-entry; huge feature surface.", "weakness": "Accountant's mental model and dated UX — a steep learning curve that filters out exactly the households FEV serves." },
+      { "name": "Maybe / 'Sure' fork", "url": "https://github.com/maybe-finance/maybe", "positioning": "The polished OSS finance app — archived upstream July 2025, community fork continuing.", "weakness": "Upstream abandoned; fork continuity risk; validates the niche while leaving it unserved by anyone accountable." }
+    ]
+  },
+  "executionPlan": {
+    "mvp": [
+      "Already shipped (audited): CSV/OFX import, vocabulary-aware categorization, subscription/price-hike detection, envelope rollover (display), debt simulators to exact dates, net-worth tracking, goals engine, multi-tenant RLS households, alerts, deployed on Vercel + Supabase.",
+      "Write the 1-page PRD the audit flagged as missing: name the game (household tool vs. self-hosted niche product), the audience, and the success metrics — before any new surface.",
+      "SimpleFIN Bridge spike behind a feature flag: one linked account syncing daily into the existing import pipeline ($15/yr, Supabase mode first).",
+      "Mobile pass: every core page usable at 375px (tables collapse to cards; calendar gets a mobile layout).",
+      "Fix the silent invite-code failure so a mistyped code can't quietly create a lone household."
+    ],
+    "firstCustomers": [
+      "The builder's own household — live today; the success metric is a full month run entirely in FEV.",
+      "If the product fork is chosen: a Show HN / r/selfhosted launch post framed as 'the self-hosted household CFO' with a one-click deploy (the Actual Budget playbook).",
+      "Comparison content: 'FEV vs Actual vs Firefly' and 'life after Mint without a subscription' — the searches migrating users already run.",
+      "The 'Sure' (Maybe fork) community — users who chose polished-OSS-finance and just lost their upstream."
+    ],
+    "pricing": {
+      "model": "Personal-first: the product stays free/self-hosted; monetization rungs are optional and deferred until the PRD decision. All prices below are speculative (est.).",
+      "tiers": [
+        { "name": "Self-host (OSS)", "price": "Free", "includes": "Full app, own infra, CSV/OFX import, all outcome features." },
+        { "name": "Supporter license / hosted instance", "price": "$49 one-time or $5-9/mo (est.)", "includes": "Managed hosting or conscience-money license; support expectations scoped tightly." },
+        { "name": "Household CFO setup", "price": "$199 one-time (est.)", "includes": "Guided setup: SimpleFIN linking, category vocabulary, debt plan configuration — productized service, only if demand appears." }
+      ]
+    },
+    "milestones90Days": [
+      "Weeks 1-2: Write and commit the 1-page PRD (game, audience, metrics). Instrument the success metrics it names.",
+      "Weeks 3-6: SimpleFIN spike behind a flag; run it on one real account for 30 days alongside CSV to compare fidelity.",
+      "Weeks 5-8: Mobile pass to 375px; fix invite-code silent failure; wire rollover into alerts/pace so envelopes are real, not display-only.",
+      "Weeks 9-12: Household runs one full calendar month with zero paid-app opens and zero manual CSV imports (if sync spike succeeded). Then — and only then — decide on the public/OSS launch."
+    ]
+  },
+  "valueLadder": [
+    { "tier": "Lead magnet", "offer": "Public /showcase demo + an 'escape velocity' calculator", "price": "Free", "goal": "Prove the outcome framing in 60 seconds; already built and now bug-free." },
+    { "tier": "Frontend", "offer": "Self-hosted OSS release with one-click deploy", "price": "Free", "goal": "Trust + distribution in the self-hosted community (the Actual Budget playbook: stars → users → word of mouth)." },
+    { "tier": "Core", "offer": "Hosted instance or supporter license", "price": "$5-9/mo or $49 one-time (est.)", "goal": "Optional revenue from households who want the outcome layer without the ops; strictly post-PRD." },
+    { "tier": "Continuity", "offer": "Sync-ready config + updates tier", "price": "$29/yr (est.)", "goal": "Covers SimpleFIN setup guidance and ongoing compatibility — the only recurring rung, sized to the actual maintenance burden." },
+    { "tier": "Backend", "offer": "Household CFO setup service", "price": "$199 one-time (est.)", "goal": "High-touch rung only if inbound demand appears; deliberately not built in advance." }
+  ],
+  "frameworks": {
+    "valueEquation": {
+      "dreamOutcome": "The household sees its exact debt-freedom date and distance-to-escape daily, on infrastructure it owns, at ~$0/yr.",
+      "perceivedLikelihood": "For the builder's household: proven — it's in daily use. For others: medium; self-hosting friction and bank-sync trust are the doubts to engineer away (one-click deploy, SimpleFIN docs).",
+      "timeDelay": "Day one with a CSV export; the outcome dashboards light up on first import.",
+      "effortAndSacrifice": "The honest tax is self-hosting setup plus weekly CSV drops until bank sync ships — the two highest-leverage reductions on the backlog.",
+      "verdict": "Excellent personal-tool economics (all value, no subscription). As a product, the equation holds only for the self-hosted niche that counts data ownership as part of the dream outcome — which is exactly who the wedge targets."
+    },
+    "marketMatrix": {
+      "quadrant": "Niche Down",
+      "explanation": "Genuine insight-uniqueness (outcome-first household CFO, self-hosted) aimed at a deliberately small market (data-owning households). Note: the live IdeaBrowser matrix now uses quadrants Tech Novelty / Category King / Low Impact / Commodity Play — under that vocabulary this sits between Tech Novelty and Category King on a small map; this library keeps the classic quadrant names for consistency."
+    },
+    "acp": {
+      "audience": "Self-hosters and data-owning households, sharpened to those in active debt-payoff or FI-planning mode — people who already run Docker for their photos and resent $109/yr for a budget ledger.",
+      "community": "Mapped and dense: r/selfhosted (~798K), r/ynab (~208K, price-hike resentful), Actual's 26K-star GitHub orbit, the orphaned Maybe/'Sure' community.",
+      "product": "An outcome-first finance OS the incumbents structurally can't copy — paid apps would cannibalize subscriptions; OSS ledgers would have to abandon their method identity."
+    }
+  },
+  "risks": [
+    { "risk": "Monetization gravity: no self-hosted finance app has proven direct revenue (Actual is free; Maybe burned ~$1M and pivoted).", "mitigation": "Treat revenue as optionality, not the point. The banked value is $99-$199/yr saved, the portfolio asset, and the skills — decide the product fork in the PRD with eyes open." },
+    { "risk": "Bank-sync expectations: daily SimpleFIN sync is below paid-app freshness, and sync reliability is the #1 churn driver in this category.", "mitigation": "Set expectations explicitly (daily, read-only, $15/yr, user-controlled), keep CSV as the always-works fallback, and never promise real-time." },
+    { "risk": "Support burden if open-sourced: self-hosters file issues, and a solo evenings-and-weekends maintainer can drown (the Maybe precedent).", "mitigation": "Ship 'as-is' with tight scope, a one-click deploy to minimize setup issues, and paid-tier-only support if any." },
+    { "risk": "Solo bus-factor and motivation decay once the household's own problem is solved.", "mitigation": "The 90-day metric ('one full month, zero paid apps, zero manual imports') keeps the personal loop closed; anything beyond that is optional by design." },
+    { "risk": "Privacy: real household financial data lives adjacent to a repo that could someday be public.", "mitigation": "Already engineered: fresh git history, env-var household naming, gitignored seed/audit files (verified 2026-07-18). Re-verify with a scrub checklist before any OSS release." }
+  ],
+  "sources": [
+    { "title": "CNBC — Monarch raises $75M Series B at $850M valuation (May 2025)", "url": "https://www.cnbc.com/2025/05/23/personal-finance-app-monarch-raises-75-million.html" },
+    { "title": "TechFundingNews — Monarch's rise after Mint's shutdown (3.6M+ Mint users)", "url": "https://techfundingnews.com/personal-finance-app-monarch-rises-with-75m-after-mints-meltdown-a-soonicorn-on-cards/" },
+    { "title": "Research Nester — Personal Finance Apps Market ($31.7B 2025 → $173.6B 2035)", "url": "https://www.researchnester.com/reports/personal-finance-apps-market/8243" },
+    { "title": "Wall Street Survivor — Rocket Money vs Monarch (+YNAB, Simplifi, Copilot) pricing comparison", "url": "https://www.wallstreetsurvivor.com/rocket-money-vs-monarch/" },
+    { "title": "YNAB — official pricing ($109/yr) and pricing-history coverage", "url": "https://www.ynab.com/pricing" },
+    { "title": "Actual Budget — GitHub (26K+ stars, local-first OSS)", "url": "https://github.com/actualbudget/actual" },
+    { "title": "Actual Budget docs — SimpleFIN setup ($1.50/mo / $15/yr user-paid bank sync)", "url": "https://actualbudget.org/docs/advanced/bank-sync/simplefin/" },
+    { "title": "SimpleFIN Bridge — protocol and pricing", "url": "https://beta-bridge.simplefin.org/" },
+    { "title": "Maybe Finance — GitHub repo (archived July 27 2025; B2B pivot; 'Sure' community fork)", "url": "https://github.com/maybe-finance/maybe" },
+    { "title": "Firefly III — self-hosted personal finance manager", "url": "https://www.firefly-iii.org/" },
+    { "title": "subredditstats — r/selfhosted (~798K members)", "url": "https://subredditstats.com/r/selfhosted" },
+    { "title": "subredditstats — r/ynab (~208K members)", "url": "https://subredditstats.com/r/ynab" }
+  ],
+  "fitReport": {
+    "generatedAt": "2026-07-18",
+    "projectPath": "C:\\Dev\\FEV",
+    "auditRef": "audits/FEV-audit-2026-07-16.md (local-only), plus repo evidence through commit a4cda8c (2026-07-17) and a fresh test run (161/161, 2026-07-18)",
+    "verdict": "REFOCUS",
+    "confidence": "High",
+    "verdictNote": "The product is genuinely good and the household wedge is already won — but the stated ambition ('replaces Rocket Money / Monarch / EveryDollar') points at a fight the research says not to pick: Monarch has $75M and 20x growth, Rocket has a free tier and a concierge moat, and both compete on convenience. The defensible aim is the outcome-oriented self-hosted niche, where the incumbents structurally can't follow. Condition: write the 1-page PRD naming that aim (the audit's standing doc-debt) before adding any new product surface.",
+    "wedgeCheck": "The original wedge — the builder's own household — is achieved and validated by daily use; that loop closed. The audit flagged an undocumented drift toward a pitchable product; notably, every post-audit feature (vocabulary-aware imports for *new* households, CSV export, rollover) serves the product wedge, so the drift is now de facto strategy. The fit call: make it official, but aim it at self-hosters and data-owning households rather than head-to-head paid-app replacement. The escape-velocity outcome framing is the differentiator no competitor in either tier has.",
+    "completion": [
+      { "aspect": "Data-integrity foundation (the audit's 4 Tier-1 bugs)", "status": "shipped", "evidence": "All fixed 2026-07-16 per CHANGELOG (storage-key namespacing, string dates, dedupe fingerprint, demo APR); 161/161 tests across 21 files, npm test 2026-07-18" },
+      { "aspect": "Privacy posture (real data out of the pushed repo)", "status": "shipped", "evidence": "Fresh single-commit public history; seed.sql + audits/ gitignored (verified git ls-files 2026-07-18); household name via env var" },
+      { "aspect": "Automatic bank sync — the #1 churn driver in the category", "status": "missing", "evidence": "CSV/OFX only as of a4cda8c; SimpleFIN path identified in audit but no spike yet" },
+      { "aspect": "Auto-categorization + rules", "status": "partial", "evidence": "Vocabulary-aware category resolution shipped in 5eca7ad; corrections still don't auto-create rules" },
+      { "aspect": "Subscription detection + upcoming bills", "status": "shipped", "evidence": "Audit: recurring.ts + CalendarPage, verified live; genuinely competitive with paid apps" },
+      { "aspect": "Envelope/rollover budgeting", "status": "partial", "evidence": "Display-only 'Available' column shipped in 5eca7ad; alerts and month-to-date pace still use flat budgets" },
+      { "aspect": "Debt payoff planner + goals", "status": "shipped", "evidence": "Audit: stronger than Rocket/Monarch on debt; simulators produce exact dates; dedicated test suites" },
+      { "aspect": "Data ownership (CSV in AND out)", "status": "shipped", "evidence": "Export of the filtered transaction view shipped in 5eca7ad — 'the way in is now also a way out'" },
+      { "aspect": "Net worth + investments", "status": "partial", "evidence": "Audit: snapshots in Supabase mode; no holdings/investment tracking (manual asset balances only)" },
+      { "aspect": "Shared household access", "status": "partial", "evidence": "Invite codes + RLS work (audit-verified isolation); the silent lone-household bug on invalid codes (migration 0005) is not in any fix list — still open" },
+      { "aspect": "Mobile-quality experience", "status": "missing", "evidence": "Audit: tables overflow at 375px, calendar unusable on mobile; no responsive work in post-audit commits" },
+      { "aspect": "Reports & trends", "status": "partial", "evidence": "Audit: MoM + 6-month trend + drilldown; no YoY, no custom date ranges" }
+    ],
+    "scopeRulings": [
+      { "observation": "Demo deck, walkthrough videos, and public /showcase were built before the product was stable (audit: 'scope creep').", "ruling": "Keep — the stability objection died on 2026-07-16 (demo bugs fixed), and the showcase is now the value ladder's lead-magnet rung. Stop adding to it until the PRD exists." },
+      { "observation": "The private-tool → product-for-others drift is real and undocumented (BUILD_BRIEF.md missing).", "ruling": "Keep, with the condition attached to the verdict: one page, naming the self-hosted niche as the aim and the success metrics. This single document resolves the audit's vision-clarity 3/5 and success-metrics 1/5 scores." },
+      { "observation": "Paid-app feature envy: bill negotiation, cancellation concierge, credit scores.", "ruling": "Cut permanently — the audit calls them not replicable self-hosted, and the research shows they're Rocket's VC-funded revenue engine, not user value FEV should chase." },
+      { "observation": "Dead modules, committed dist/, stale branches flagged by the audit.", "ruling": "Already cut — a4cda8c ('Delete dead modules that broke clean-checkout builds') and the history republish closed these." }
+    ],
+    "monetization": "Zero rungs exist in code — no billing, no pricing page, no lead capture — and the research says that is currently correct, not a gap: no self-hosted finance app has proven direct revenue (Actual is free; Maybe spent ~$1M and pivoted to B2B). FEV's banked return today is $99-$199/yr in avoided subscriptions, a daily-use tool, and a portfolio-grade asset. Do not build billing before the PRD decision; if the product fork is chosen, the ladder's optional rungs (hosted instance, supporter license, setup service) are sized for a solo operator.",
+    "scoreAdjustments": [
+      { "dimension": "feasibility", "was": 7, "now": 9, "reason": "Research-only scoring would guess ~7 for 'solo-buildable finance app'; the audit evidence replaces the guess — it's built, deployed, and 161/161 tests pass (verified 2026-07-18)." },
+      { "dimension": "opportunity", "was": 7, "now": 6, "reason": "Fresh research cuts the other way: the self-hosted niche is real but monetizes poorly (Actual free, Maybe's failed economics), so the raw market size overstates the capturable opportunity." },
+      { "dimension": "whyNow", "was": 6, "now": 7, "reason": "Two 2025 events sharpened timing beyond what the original build assumed: Maybe's July 2025 archive vacated the polished-OSS-finance slot, and SimpleFIN's adoption by Actual proved the $15/yr user-paid sync model." }
+    ]
+  },
+  "buildKit": {
+    "generatedAt": "2026-07-18",
+    "prd": {
+      "problem": "A feature-complete, well-tested self-hosted household finance app has closed its data-integrity and privacy debts but still carries the category's #1 gap (no automatic bank sync), a desktop-only experience, and an undocumented split identity between 'household tool' and 'product for others.'",
+      "targetUser": "Primary: the owner household, in daily use. Secondary (post-PRD): data-owning self-hosters in debt-payoff or FI-planning mode migrating off Mint's paid successors.",
+      "coreFeatures": [
+        "The 1-page PRD decision document: household tool vs. self-hosted niche product, audience, and 3 instrumentable success metrics (this is a feature — it gates everything below)",
+        "SimpleFIN Bridge sync spike behind a feature flag: one linked account, daily pull into the existing import + dedupe pipeline, Supabase mode first",
+        "Invite-code integrity: invalid codes fail loudly instead of silently creating a lone household",
+        "Rollover integration: feed the envelope 'Available' math into alerts and month-to-date pace so rollover is real, not display-only",
+        "Mobile pass: all core pages usable at 375px — tables collapse to cards, calendar gets a stacked layout",
+        "Correction→rule prompting: recategorizing a transaction offers to create the matching rule",
+        "Reports: YoY comparison and a custom date-range explorer on the existing drilldowns",
+        "Success-metric instrumentation: count paid-app opens avoided, manual imports, weekly active use — whatever the PRD names"
+      ],
+      "nonGoals": [
+        "No bill negotiation, cancellation concierge, or credit scores — ever (not replicable self-hosted; they're the incumbents' revenue engine, not user value)",
+        "No investment/holdings tracking in this cycle — manual asset balances remain sufficient for the outcome dashboards",
+        "No billing or payments infrastructure before the PRD chooses the product fork",
+        "No native mobile apps — responsive web (optionally PWA) only",
+        "No multi-currency",
+        "No public/OSS launch until the 90-day household metric is green and a privacy scrub checklist passes"
+      ],
+      "successMetrics": [
+        "One full calendar month where the household runs entirely in FEV — zero opens of any paid finance app",
+        "30 consecutive days with zero manual CSV imports (SimpleFIN spike carrying the load)",
+        "Every core page usable at 375px with no horizontal scroll",
+        "The PRD exists, is committed, and names which game is being played"
+      ]
+    },
+    "techStack": {
+      "suggested": "Keep the current stack: React 18 + TypeScript + Vite, Supabase (Postgres + RLS), Vercel, Vitest",
+      "rationale": "The stack is proven in production with 161 passing tests and clean builds — a fit report never proposes a rewrite. SimpleFIN lands as a scheduled function feeding the existing import pipeline; everything else is feature work inside the current architecture."
+    },
+    "backlog": [
+      { "title": "Write the 1-page PRD (game, audience, 3 metrics)", "description": "Resolves the audit's missing BUILD_BRIEF and the drift ruling; gates all product-facing work.", "priority": "P0" },
+      { "title": "SimpleFIN Bridge spike behind a flag", "description": "One real account, daily sync into import + dedupe, Supabase mode; run 30 days alongside CSV to compare fidelity.", "priority": "P0" },
+      { "title": "Fix silent invite-code failure", "description": "Invalid codes error loudly instead of creating an orphan household (migration 0005 path).", "priority": "P0" },
+      { "title": "Wire rollover into alerts + pace", "description": "Envelope 'Available' becomes the number alerts and month-to-date pace reason about.", "priority": "P1" },
+      { "title": "Mobile pass to 375px", "description": "Tables→cards, stacked calendar, no horizontal scroll anywhere; the category's paid moat is mobile.", "priority": "P1" },
+      { "title": "Correction→rule prompting", "description": "Recategorization offers to create the rule; closes the last auto-categorization gap.", "priority": "P1" },
+      { "title": "Instrument the PRD's success metrics", "description": "The audit scored success metrics 1/5; make them numbers the app itself reports.", "priority": "P1" },
+      { "title": "YoY + custom date-range reports", "description": "Extends existing MoM/trend drilldowns.", "priority": "P2" },
+      { "title": "OSS-readiness review", "description": "Privacy scrub checklist, one-click deploy (Railway/Render template), 'as-is' support posture doc — only after the 90-day metric is green.", "priority": "P2" }
+    ],
+    "buildPrompt": "You are working in FEV (Financial Escape Velocity), an existing, working self-hosted household finance app — React 18 + TypeScript + Vite frontend, Supabase (Postgres with RLS) backend, deployed on Vercel, tested with Vitest (161/161 passing). This is a brownfield engagement: do not scaffold, do not rewrite, do not restyle. Read the repo before changing it.\n\nWhat already works and must not regress: CSV/OFX import with vocabulary-aware category resolution, subscription and price-hike detection with a bill calendar, envelope rollover (currently display-only), debt-payoff simulators that produce exact payoff dates, net-worth snapshots, a goals engine, escape-velocity (income-replacement) tracking, multi-tenant households behind RLS, and mode-scoped storage separating demo/local/cloud data.\n\nBuild, in this order:\n1. SimpleFIN Bridge sync behind a feature flag: a scheduled daily pull for one linked account that feeds the EXISTING import + dedupe pipeline (do not build a parallel path). Supabase mode first. Surface sync status and last-pull time in the UI. Expect ~daily freshness; keep CSV import untouched as the fallback.\n2. Invite-code integrity: an invalid or expired invite code must fail loudly at signup instead of silently creating a new single-member household.\n3. Rollover integration: make the envelope 'Available' calculation the number that alerts and month-to-date pace use, replacing flat monthly budgets, with a setting to opt out.\n4. Mobile pass: every core page usable at 375px — data tables collapse to card layouts, the bill calendar becomes a stacked list, no horizontal scroll anywhere.\n5. Correction→rule prompting: when a user recategorizes a transaction, offer a one-click 'always do this' rule using the existing rules engine.\n6. Success-metric instrumentation: a small internal stats module counting manual imports per month, sync-covered days, and weekly active use.\n\nDo NOT build: bill negotiation, cancellation concierge, credit scores, investment holdings, billing/payments, native apps, or multi-currency. Do not touch the public /showcase demo. Match the existing code style, keep the storage-key mode-scoping discipline, and add Vitest coverage for every behavior you add — this codebase's discipline (161 passing tests, zero TODOs) is a feature; keep it that way.\n\nStart with the SimpleFIN spike: get one account syncing end-to-end behind the flag and stop — show me the sync working and the dedupe holding before touching anything else.\n\n--- BUSINESS CONTEXT ---\nProduct: self-hosted household finance command center ('FEV'). One household in daily use is the proven wedge; the expansion niche is data-owning self-hosters in debt-payoff/FI mode.\nScores: Opportunity 6/10 (huge market ~$31.7B but the self-hosted slice monetizes poorly); Problem 7/10 (Mint's shutdown orphaned 3.6M+ users into $95-$199/yr subscriptions; YNAB went $60 one-time → $109/yr; households average 20+ subscriptions); Feasibility 9/10 (already built, 161/161 tests); Why-now 7/10 (Maybe Finance archived July 2025 leaving polished-OSS-finance unserved; SimpleFIN proved $15/yr user-paid bank sync via Actual Budget).\nMarket gap: paid apps (Monarch $99.99-$199/yr with a $75M Series B; Rocket Money free + $7-14/mo with a bill-negotiation revenue engine; YNAB $109/yr) optimize convenience + monetization and keep your data; self-hosted apps (Actual Budget, 26K+ GitHub stars, envelope ledger; Firefly III, double-entry, steep curve) optimize privacy but answer no outcome questions. Nobody self-hosted tells a household its exact debt-freedom date or distance to replacing a W-2 — that outcome layer is this product's differentiation and the reason head-to-head 'replace Rocket Money' framing is the wrong fight.\nValue ladder (mostly optional/deferred): free public demo → free OSS self-host → optional hosted/supporter rung ($5-9/mo or $49 one-time, est.) → sync/updates continuity ($29/yr, est.) → setup service ($199, est.). No billing exists and none should be built this cycle.\nKey risks to respect while building: bank-sync expectations (daily, read-only, never promise real-time), solo-maintainer support burden (keep surface small, as-is posture), and privacy (seed/audit files are gitignored local-only — nothing personal ever enters the repo or logs).\nCommunities that matter for any future launch: r/selfhosted (~798K), r/ynab (~208K, price-hike resentful), Actual Budget's GitHub orbit, the orphaned Maybe/'Sure' community.\nSources for the stats above live in the idea report (ideas/household-finance-command-center/idea.json); estimates are marked (est.)."
+  }
+}
