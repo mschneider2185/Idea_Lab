@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operator-Side Frac Sand Logistics Command Center — Idea Lab</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="../index.html">💡 Idea Lab</a>
+  <span class="tagline">Deep-researched product ideas, IdeaBrowser style — self-hosted.</span>
+</header>
+<main>
+<div class="report-hero">
+    <a class="back" href="../index.html">← All ideas</a>
+    <div class="card-top"><span class="badge badge-building">building</span><span class="date">researched 2026-07-18</span></div>
+    <h1>Operator-Side Frac Sand Logistics Command Center <span class="workname">“FleetSync”</span></h1>
+    <p class="one-liner">Gantt scheduling, daily truck-allocation math, and scenario planning for the completions team coordinating sand across multiple frac fleets — the operator-side planning layer that today lives in Excel because every incumbent's software is welded to their hardware.</p>
+    <div class="tags"><span class="tag">B2B SaaS (vertical)</span><span class="tag">Oilfield / completions logistics software</span><span class="tag">for Completions &amp; sand-logistics coordinators at shale operators and pressure pumpers</span><span class="tag">LNG-driven gas completions ramp</span></div>
+  </div>
+<div class="score-row"><div class="score-card">
+    <div class="score-num mid">6<span>/10</span></div>
+    <div class="score-label">Opportunity</div>
+    <div class="score-note">Budgets are real (oilfield software prices in $1K+/fleet/mo territory) but the buyer set is narrow — operators and pressure pumpers — and incumbents bundle 'free' software with sand, boxes, and trucking. The open slot is the hardware-agnostic operator-side planning layer.</div>
+  </div><div class="score-card">
+    <div class="score-num high">8<span>/10</span></div>
+    <div class="score-label">Problem severity</div>
+    <div class="score-note">A frac crew consumes a truckload of sand roughly every 10 minutes, 24/7 (~144 loads/day/crew); last-mile logistics is up to one-third of delivered sand cost; waiting-on-sand downtime runs ~$5,500-$10,000+ per hour. Mis-planned allocation is one of the most expensive spreadsheet errors in shale.</div>
+  </div><div class="score-card">
+    <div class="score-num mid">7<span>/10</span></div>
+    <div class="score-label">Feasibility</div>
+    <div class="score-note">Built and functional: ~20.3K LOC across 8 pages (Gantt, allocation grid, scenarios, workload intelligence), shaped by daily use inside a real completions program. Docked from 9: zero tests, two live type errors in core pages, and dead scaffolding — the quality foundation lags the feature set.</div>
+  </div><div class="score-card">
+    <div class="score-num mid">7<span>/10</span></div>
+    <div class="score-label">Why now</div>
+    <div class="score-note">The 2026 'mega-LNG wave' (Corpus Christi Stage 3, Plaquemines Phase 2 online) has EIA projecting record US gas output in 2026-27; Appalachia alone needs ~50 more rigs and frac crews for the next 35 Bcf/d, with ~824 DUCs queued. More crews × higher sand intensity (~2,500 lb/lateral-ft) = more coordination pain per operator.</div>
+  </div></div>
+<section class="report-section">
+    <h2>Business fit</h2>
+    
+    <div class="fit-row"><div class="fit-card"><div class="fit-big">$$</div>
+        <div class="score-label">Revenue potential</div><div class="score-note">Per-fleet or per-program SaaS at $1K-$5K/mo (est.) is credible for software that visibly prevents $10K/hr downtime; a handful of operator customers is a real business. Gated today by IP/employment questions, not by the market.</div></div><div class="fit-card">
+    <div class="score-num mid">6<span>/10</span></div>
+    <div class="score-label">Execution difficulty</div>
+    <div class="score-note">The remaining technical work is ordinary (tests, auth, audit trail, analytics). The genuinely hard part is non-technical: IP cleanliness for a tool born inside an employer's operations, and selling into that employer's industry while employed there.</div>
+  </div><div class="fit-card">
+    <div class="score-num low">3<span>/10</span></div>
+    <div class="score-label">Go-to-market</div>
+    <div class="score-note">As a personal product today, GTM is blocked pending IP/conflict clarity — the natural first customers are the builder's employer's orbit. Post-clarity, the path is strong: an operator-proven tool sold peer-to-peer through completions networks is exactly how oilfield software spreads.</div>
+  </div></div><div class="callout"><strong>Founder fit:</strong> As high as founder-market fit gets — the tool was built by the person doing the job it automates, inside a live completions program, and every feature (lane cascading, NPT sub-categories, sandbox scenarios) encodes real operational scar tissue. The same origin is the constraint: employment and IP position must be resolved in writing before this becomes a product.</div>
+  </section>
+<section class="report-section">
+    <h2>The idea</h2>
+    
+    <h3>Problem</h3><p>A modern frac crew burns a truckload of sand every ~10 minutes around the clock; last-mile logistics is as much as a third of delivered sand cost, and a crew waiting on sand costs $5,500-$10,000+ per hour. The software incumbents all sell hardware or services first — Solaris silos, PropX containers with PropConnect, Atlas trucking with Opti dispatch — so their tools optimize their own asset utilization and dispatch, not the operator's cross-fleet plan. The operator-side questions — which pads run on which fleet lanes, how many trucks per hauler per day, what breaks if a pad slips a week, baseline vs. forecast vs. actual — live in Excel, rebuilt by every completions team, breaking silently under simul-frac pace.</p>
+<h3>Solution</h3><p>FleetSync is the operator-side sand logistics command center: an interactive Gantt of frac jobs by fleet lane with drag-and-drop rescheduling and lane cascading, an Excel-like daily truck-allocation grid with hauler totals / frac needs / surplus rows and real-time conflict detection, truck-demand math from stage pace (stages/day × tons/stage → loads/day with storage-type overrides), scenario management (baseline / forecast / actual / sandbox with isolation), an NPT journal with sub-categorized causes, and CSV/Excel import-export both ways. Hardware-agnostic by design — it doesn't care whose boxes, silos, or trucks are on location.</p>
+<div class="callout"><strong>The wedge:</strong> The sand-logistics coordinator at a gas operator running multiple frac fleets — a planning buyer, not a dispatch buyer. Win the plan (the Gantt + allocation grid that replaces the sacred spreadsheet), and expansion into actuals, analytics, and hauler-facing views follows. Every incumbent must sell hardware to justify their software; this sells the plan itself.</div>
+  </section>
+<section class="report-section">
+    <h2>Why now</h2>
+    
+    <p>Gas completions activity is entering a multi-year ramp: the 2026 LNG wave (Corpus Christi Stage 3 and Plaquemines Phase 2 both due online) has the EIA projecting record US natural gas production in 2026 and 2027, and Appalachia alone is estimated to need ~50 additional rigs and frac crews to deliver the next 35 Bcf/d, with ~824 drilled-but-uncompleted wells queued. Meanwhile sand intensity keeps climbing (~2,500 lb per lateral foot is now the sweet spot in core Marcellus) and simul-frac/e-frac pace compresses the margin for logistics error. The incumbents consolidated around hardware (Liberty acquired PropX; Atlas built dispatch around its own trucking), leaving the operator-side planning layer unclaimed. And the build cost collapsed: this app itself was AI-assisted into existence by a practitioner on the job.</p>
+<ul><li>LNG pull: Corpus Christi Stage 3 and Plaquemines Phase 2 liquefaction online in 2026; ~80% growth in US LNG export capacity projected over five years.</li><li>EIA projects record US natural gas production in 2026 and 2027 — completions activity follows.</li><li>Appalachia: ~824 DUCs and an estimated ~50 additional rigs/frac crews needed for 35 Bcf/d of new production — each new crew is another coordination surface.</li><li>Sand intensity: ~2,500 lb/lateral-ft designs and simul-frac operations multiply daily tonnage and truck cadence per pad.</li><li>Incumbent structure: last-mile software is bundled with proppant, containers, or trucking (Solaris, PropX/Liberty, Atlas, Vorto) — none is incented to sell the operator a neutral planning tool.</li><li>AI-assisted development lets a practitioner build the internal tool their vendor never would — FleetSync is the existence proof.</li></ul>
+  </section>
+<section class="report-section">
+    <h2>Proof &amp; signals</h2>
+    
+    <h3>Search demand</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th>Keyword</th><th>Volume</th><th>Growth</th><th>Note</th></tr></thead>
+    <tbody><tr><td>frac sand logistics software</td><td>low (est.)</td><td>steady (est.)</td><td>B2B niche — demand shows up in vendor marketing (PropConnect, Atlas Opti) and procurement conversations, not consumer search volume.</td></tr>
+<tr><td>frac sand last mile cost</td><td>low-moderate (est.)</td><td>steady</td><td>A persistent genre of industry analysis (AOGR, PLG Consulting) quantifying last-mile share of delivered cost — the pain is measured and re-measured, which means budgets exist.</td></tr></tbody>
+  </table></div>
+<h3>Community signals</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th>Platform</th><th>Community</th><th>Size</th><th>What it proves</th></tr></thead>
+    <tbody><tr><td>Industry forum</td><td><a href="https://petroleumconnection.com/any-recommendations-on-good-ticketing-inventory-software-for-frac-sand-mine-operations/">Petroleum Connection</a></td><td>n/a</td><td>Organic threads asking for exactly this category ('good ticketing/inventory software for frac sand operations') — unprompted demand for tooling in the niche.</td></tr>
+<tr><td>LinkedIn</td><td>Completions / frac sand professional networks</td><td>n/a</td><td>The actual buyer watering hole: completions managers, sand coordinators, and logistics leads are dense and reachable via peer content — the standard oilfield-software GTM channel.</td></tr>
+<tr><td>Trade press</td><td><a href="https://www.aogr.com/magazine/cover-story/last-mile-solutions-enhance-efficiency-reliability-of-proppant-supply-chain">AOGR / Hart Energy completions coverage</a></td><td>n/a</td><td>Last-mile logistics gets recurring cover-story treatment — vendor-neutral evidence the category is a recognized cost center.</td></tr></tbody>
+  </table></div>
+<h3>Market stats</h3>
+<ul class="stats"><li>Last-mile logistics comprises as much as one-third of the total delivered cost of frac sand; for Northern White sand, logistics can reach ~75% of delivered cost. <span class="src"><a href="https://www.aogr.com/magazine/cover-story/last-mile-solutions-enhance-efficiency-reliability-of-proppant-supply-chain">AOGR / PLG Consulting</a></span></li><li>A crew waiting on sand incurs ~$5,500/hr on smaller operations and $10,000+/hr on larger ones; carrier wait time adds ~$2,000/hr. <span class="src"><a href="https://logistixiq.com/frac-sand-delivery/">LogistixIQ</a></span></li><li>A modern frac crew requires a truckload of sand roughly every 10 minutes, 24/7 — on the order of 144 loads/day. <span class="src"><a href="https://logistixiq.com/frac-sand-delivery/">LogistixIQ</a></span></li><li>EIA projects US natural gas production to reach record highs in 2026 and 2027 on LNG export growth. <span class="src"><a href="https://www.eia.gov/todayinenergy/detail.php?id=67166">EIA</a></span></li><li>Appalachia holds ~824 DUC wells (second-largest US inventory) and needs an estimated ~50 additional rigs and frac crews to deliver 35 Bcf/d of new production. <span class="src"><a href="https://www.crudeir.com/duc-wells-by-basin-2026/">CrudeIR / AOGR</a></span></li><li>Core Marcellus completion designs center on ~2,500 lb of proppant per lateral foot at 200-ft stage spacing. <span class="src"><a href="https://www.aogr.com/magazine/editors-choice/appalachian-gas-producers-meet-regional-demand-growth-lng-export-needs">AOGR</a></span></li></ul>
+  </section>
+<section class="report-section">
+    <h2>Market gap</h2>
+    
+    <p>Every serious software player in frac sand logistics is a hardware or services company first: their software exists to sell and utilize their assets, and it optimizes their slice — container cycling, silo inventory, truck dispatch. The operator's cross-fleet planning problem (multi-pad Gantt, hauler allocation, what-if scenarios, baseline-vs-actual) is nobody's product, because a neutral planning tool doesn't move sand tonnage or truck hours. So it defaults to Excel — unversioned, single-user, formula-fragile — at exactly the moment simul-frac pace and LNG-driven activity make the plan both more complex and more expensive to get wrong. The gap is the neutral, operator-owned planning layer; FleetSync is that layer, already shaped by production use inside a shale gas operator's completions program.</p>
+<div class="table-wrap"><table>
+    <thead><tr><th>Competitor</th><th>Positioning</th><th>The gap they leave</th></tr></thead>
+    <tbody><tr><td><a href="https://www.propx.com/">PropX (PropConnect) — Liberty Energy</a></td><td>Last-mile container/wet-sand logistics with the PropConnect platform spanning operators, dispatchers, and trucking.</td><td>Software rides the hardware: it exists where PropX equipment is on location, and it optimizes PropX's logistics loop — not the operator's cross-fleet, multi-vendor plan.</td></tr>
+<tr><td><a href="https://sandboxlogistics.com/">Solaris (incl. former SandBox)</a></td><td>Silo and container systems with inventory/telemetry software; major Permian share.</td><td>Same structure: the software is an attachment to sand storage hardware. No neutral planning/scenario layer for pads served by other vendors.</td></tr>
+<tr><td><a href="https://www.atlas.energy/our-solutions/">Atlas Energy Solutions (Opti Ordering / Opti Dispatch)</a></td><td>Vertically integrated Permian sand + trucking with autonomous ordering/dispatch.</td><td>Brilliant at dispatching Atlas sand on Atlas trucks in one basin; structurally incapable of being the operator's vendor-neutral planning system, and Appalachia isn't its ground.</td></tr>
+<tr><td><a href="https://vorto.ai/">Vorto / Automatize-class dispatch platforms</a></td><td>AI dispatch and carrier marketplaces for bulk oilfield logistics.</td><td>Dispatch-time optimization, not plan-time: they route today's loads; they don't hold the 6-month Gantt, the allocation grid, or the sandbox scenario.</td></tr>
+<tr><td>Excel + shared drives (the real incumbent)</td><td>Every completions team's home-grown workbook: lanes as tabs, allocations as cells, tribal formulas.</td><td>Single-user, unversioned, no conflict detection, breaks silently when a pad slips — and the person who built the workbook eventually changes jobs.</td></tr></tbody>
+  </table></div>
+  </section>
+<section class="report-section">
+    <h2>Execution plan</h2>
+    
+    <h3>MVP</h3><ol><li>Already built (evidence pass, 2026-07-18): full CRUD for frac jobs/haulers/lanes/scenarios/schedules/allocations; drag-and-drop Gantt with lane cascading; Excel-like allocation grid with bulk edit, drag-to-fill, and three summary footer rows; real-time conflict detection; scenario cloning with sandbox isolation; truck-demand breakdowns with overrides; NPT journal; CSV/XLSX import and export; role-based planner/viewer access.</li><li>Gate 0 (before any product motion): remediate the public-repo data exposure and obtain written clarity on IP/ownership and employment conflict — see fit report.</li><li>Quality floor: delete dead scaffolding, fix the two live type errors, stand up a test harness with the truck-demand engine covered first (it's the money math).</li><li>Replace env-var usernames with real authentication and per-org tenancy — the difference between an internal tool and a sellable product.</li><li>Audit trail + change history (already on the roadmap) — table stakes for multi-user planning trust.</li></ol>
+<h3>First customers</h3><ul><li>None until Gate 0 clears — deliberately. The natural first customers sit in or near the builder's employer's orbit, which is exactly why the IP/conflict question gates everything.</li><li>Post-gate: one friendly mid-size Appalachian or Haynesville operator running 2+ fleets, recruited peer-to-peer through completions networks, free pilot instrumented on planning-time saved and allocation conflicts caught.</li><li>Pressure pumpers' logistics teams as a second segment — they feel the same allocation pain from the service side.</li><li>Trade-press credibility loop: the last-mile cost genre (AOGR et al.) is hungry for operator-side tooling stories.</li></ul>
+<h3>Pricing</h3>
+<p>Per-fleet (lane) subscription, operator-level contract; all numbers speculative (est.) pending Gate 0 and first pilots.</p>
+<div class="table-wrap"><table>
+    <thead><tr><th>Tier</th><th>Price</th><th>Includes</th></tr></thead>
+    <tbody><tr><td>Pilot</td><td>Free, 90 days (est.)</td><td>One fleet lane, full planning stack, success metrics instrumented.</td></tr>
+<tr><td>Program</td><td>$1,500/fleet/mo (est.)</td><td>All lanes, scenarios, conflict detection, import/export, audit trail.</td></tr>
+<tr><td>Enterprise</td><td>$4,000+/fleet/mo (est.)</td><td>SSO, hauler-facing views, analytics dashboards, priority support.</td></tr></tbody>
+  </table></div>
+<h3>First 90 days</h3><ol><li>Weeks 1-2: Gate 0 — repo containment (private + history rewrite) and the IP/conflict memo. Nothing else matters until this is done.</li><li>Weeks 3-6: Quality floor — dead code deleted, type-clean, test harness with demand-engine coverage, CI green gate.</li><li>Weeks 7-10: Real auth + tenancy; audit trail.</li><li>Weeks 11-12: Re-run /idea-fit. If Gate 0 resolved favorably, this verdict upgrades and the pilot search starts; if not, FleetSync remains a work-machine internal tool and a portfolio proof, which is also a fine outcome.</li></ol>
+  </section>
+<section class="report-section">
+    <h2>Value ladder</h2>
+    
+    <div class="ladder"><div class="ladder-step">
+        <div class="ladder-rank">1</div>
+        <div>
+          <div class="ladder-tier">Lead magnet · <span class="price">Free</span></div>
+          <div class="ladder-offer">Truck-demand calculator (stages/day × tons/stage → loads/day, storage-type aware) as a free web tool</div>
+          <div class="score-note">Demonstrate the core math to completions coordinators; harvest the buyer conversation. (Speculative — post-Gate 0.)</div>
+        </div>
+      </div><div class="ladder-step">
+        <div class="ladder-rank">2</div>
+        <div>
+          <div class="ladder-tier">Frontend · <span class="price">Free (est.)</span></div>
+          <div class="ladder-offer">90-day instrumented pilot, one fleet lane</div>
+          <div class="score-note">Land inside the workflow that replaces the sacred spreadsheet; measure conflicts caught and planning hours saved.</div>
+        </div>
+      </div><div class="ladder-step">
+        <div class="ladder-rank">3</div>
+        <div>
+          <div class="ladder-tier">Core · <span class="price">$1,500/fleet/mo (est.)</span></div>
+          <div class="ladder-offer">Program subscription — full planning stack, all lanes</div>
+          <div class="score-note">The operating contract; priced against $10K/hr downtime and a third-of-delivered-cost logistics line.</div>
+        </div>
+      </div><div class="ladder-step">
+        <div class="ladder-rank">4</div>
+        <div>
+          <div class="ladder-tier">Continuity · <span class="price">included/upsell (est.)</span></div>
+          <div class="ladder-offer">Analytics + actuals: NPT rollups, plan-vs-actual variance, hauler scorecards</div>
+          <div class="score-note">Turn accumulated planning data into the retention moat — the longer it runs, the smarter the plan.</div>
+        </div>
+      </div><div class="ladder-step">
+        <div class="ladder-rank">5</div>
+        <div>
+          <div class="ladder-tier">Backend · <span class="price">$4,000+/fleet/mo (est.)</span></div>
+          <div class="ladder-offer">Enterprise: SSO, hauler portals, multi-program rollups</div>
+          <div class="score-note">Expand from one completions team to the operator's whole program.</div>
+        </div>
+      </div></div>
+  </section>
+<section class="report-section">
+    <h2>Framework fit</h2>
+    
+    <div class="fw-grid"><div class="fw-card"><h3>Value equation</h3><dl>
+        <dt>Dream outcome</dt><dd>No crew ever waits on sand because the plan saw the conflict a week early; the coordinator runs scenarios in minutes instead of rebuilding a workbook at 5 a.m.</dd>
+        <dt>Perceived likelihood</dt><dd>High with the origin story told: built inside a live completions program by the person doing the job — the rarest credibility in oilfield software.</dd>
+        <dt>Time delay</dt><dd>Days: import the current sand plan (CSV/XLSX already supported), see conflicts immediately.</dd>
+        <dt>Effort &amp; sacrifice</dt><dd>The real cost is switching off the sacred spreadsheet — mitigated by the grid literally behaving like Excel (inline edit, drag-to-fill, bulk ops).</dd>
+        <dt>Verdict</dt><dd><strong>A strong offer for a measured, expensive pain — once the non-market gates (IP, exposure) clear. The equation is currently blocked on likelihood-of-being-sellable, not on customer value.</strong></dd>
+      </dl></div><div class="fw-card"><h3>Market matrix</h3>
+        <div class="quadrant">Niche Down</div>
+        <p>High-uniqueness insight (the hardware-neutral, operator-owned planning layer) into a deliberately narrow market (completions teams at shale operators). The ceiling is a category-defining vertical tool, not a horizontal platform — and at oilfield price points, that ceiling is a real business.</p></div><div class="fw-card"><h3>A.C.P. fit</h3><dl>
+        <dt>Audience</dt><dd>Completions managers and sand-logistics coordinators at gas-weighted operators and pressure pumpers — a small, dense, name-knowable population.</dd>
+        <dt>Community</dt><dd>Not consumer-style communities: LinkedIn completions networks, SPE, trade press, and peer referral — the standard oilfield-software channel, where one credible operator logo unlocks the next three.</dd>
+        <dt>Product</dt><dd>A planning tool that behaves like the spreadsheet it replaces, carries the domain's exact vocabulary (lanes, stages, NPT sub-causes, storage types), and stays neutral across sand/box/trucking vendors.</dd>
+      </dl></div></div>
+  </section>
+<section class="report-section">
+    <h2>Risks</h2>
+    
+    <div class="table-wrap"><table>
+    <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+    <tbody><tr><td>IP/ownership ambiguity: the tool originated inside an employer's operations; the employer may have claims on it, and selling in the employer's industry while employed is a conflict minefield.</td><td>Written clarity before any product motion — employment agreement review, possibly a formal carve-out. This is Gate 0 alongside exposure remediation; the 90-day plan does nothing customer-facing before it.</td></tr>
+<tr><td>Public-repo data exposure: real operational data from the origin deployment exists in the public repository's current tree and full history.</td><td>Immediate containment (repo private), then history rewrite removing the export file, attached assets, and historical seeds; re-verify with a sweep before any re-publication.</td></tr>
+<tr><td>Quality foundation lags the feature set: zero tests, live type errors, dead scaffolding — risky ground for a tool whose output allocates $10K/hr resources.</td><td>Test harness starting with the truck-demand engine, type-clean gate in CI, delete the boilerplate.</td></tr>
+<tr><td>Incumbent response: PropX/Atlas could ship operator-neutral planning views if the niche proves out.</td><td>Their business models resist neutrality (software exists to move their assets); speed plus operator-side trust is the moat, and Appalachia is under-served by Permian-centric incumbents.</td></tr>
+<tr><td>Single-buyer-type concentration in a cyclical industry: gas activity downturns freeze oilfield software budgets.</td><td>Price per fleet (scales down gracefully), keep the tool valuable at planning time even when activity slows — scenario planning matters most when schedules are in flux.</td></tr></tbody>
+  </table></div>
+  </section>
+<section class="report-section">
+    <h2>Fit report — research vs. reality</h2>
+    <p class="section-sub">Generated 2026-07-18 · Grounded in No formal /project-audit exists. Grounded in a scoped evidence pass (2026-07-18): fresh clone of the public GitHub repo, README-vs-code review, TypeScript check, test/LOC census, 215-commit history review, and a data-scrub verification sweep. A full /project-audit is recommended before any product motion.</p>
+    <div class="callout"><strong>Verdict: PARK</strong> (confidence: High) — Park the public product ambition — not the product. Two non-market gates must clear first: (1) the public repo currently exposes real operational data from the origin deployment, in the current tree and throughout history — containment and a history rewrite are P0; (2) the tool was born inside an employer's operations, so IP/ownership and employment-conflict clarity must exist in writing before a single customer conversation. Both are resolvable; if they resolve favorably, the market timing (2026-27 LNG-driven completions ramp) and the open operator-side planning slot likely upgrade this to BUILD ON at the scheduled re-run. The internal version continuing on the work machine is unaffected by this verdict.</div>
+<h3>Wedge check</h3><p>The product nails the researched wedge with unusual precision — it was built by the wedge persona (a sand-logistics coordinator) inside a live completions program, and the feature set encodes the job's real edge cases (lane cascading, NPT sub-causes, sandbox scenario isolation, storage-type demand overrides). There is no product drift. The drift risk is positional, not product: the personal/public fork currently has no servable customer until the IP and exposure gates clear, and pretending otherwise would aim a good product at a legal wall.</p>
+<h3>Completion vs. the research</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th>Capability</th><th>Status</th><th>Evidence</th></tr></thead>
+    <tbody><tr><td>Planning Gantt with drag-and-drop, lane cascading, zoom levels</td><td>✅ shipped</td><td>README verified against client/src/pages/dashboard.tsx and workload.tsx; commit history shows iterative refinement through 2026-07</td></tr>
+<tr><td>Excel-like daily allocation grid (inline/bulk edit, drag-to-fill, summary footers)</td><td>✅ shipped</td><td>allocation-grid.tsx; README feature list matches implementation</td></tr>
+<tr><td>Scenario management with sandbox isolation (baseline/forecast/actual/sandbox)</td><td>✅ shipped</td><td>Scenario CRUD + isolation in schema and storage layer — the differentiator no incumbent planning surface has</td></tr>
+<tr><td>Real-time conflict detection</td><td>✅ shipped</td><td>README verified; dismissible warnings wired into planning views</td></tr>
+<tr><td>Truck-demand engine (stage pace → loads/day with overrides)</td><td>✅ shipped</td><td>Demand breakdowns with date-segmented overrides; the core money-math of the product — currently has zero test coverage</td></tr>
+<tr><td>NPT journal with sub-categorized causes</td><td>✅ shipped</td><td>Six NPT sub-categories; Gantt shows journal-day indicators; a warehouse-sync integration existed in the origin era</td></tr>
+<tr><td>CSV/XLSX import and export</td><td>✅ shipped</td><td>Import for sand plans, export for grid + per-frac reports; server/import + sand-actuals modules</td></tr>
+<tr><td>Quality foundation (tests, type-clean, CI)</td><td>❌ missing</td><td>0 test files; no test script in package.json; 15 tsc errors (13 in dead Replit boilerplate, 2 live in workload.tsx); no CI</td></tr>
+<tr><td>Real authentication &amp; multi-tenancy</td><td>❌ missing</td><td>Access control is a PLANNER_USERNAMES env var — an internal-tool pattern, not a product one</td></tr>
+<tr><td>Audit trail / change history</td><td>❌ missing</td><td>README 'What's next'; required for multi-user planning trust</td></tr>
+<tr><td>Analytics &amp; reporting dashboards</td><td>❌ missing</td><td>README 'What's next'; the retention rung of the value ladder</td></tr>
+<tr><td>Mobile-responsive experience</td><td>❌ missing</td><td>README 'What's next'; field users live on phones and tablets</td></tr>
+<tr><td>Data hygiene of the public repo</td><td>❌ missing</td><td>Real operational export in the current tree; origin-era seeds, an internal PRD PDF, and branding assets throughout the 215-commit public history (specifics deliberately omitted here)</td></tr></tbody>
+  </table></div>
+<h3>Scope rulings</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th>Observation</th><th>Ruling</th></tr></thead>
+    <tbody><tr><td>Replit scaffolding (chat/image integrations, boilerplate package name 'rest-express') rode along from the app's origin and accounts for 13 of 15 type errors.</td><td>Cut — delete server/replit_integrations and rename the package; it's dead weight distorting the health signal.</td></tr>
+<tr><td>A real planning-data export file sits in the repository tree.</td><td>Cut immediately as part of Gate 0 containment; exports belong in gitignored local space (the FEV convention).</td></tr>
+<tr><td>Landing page and public-product framing exist while the gates are unresolved.</td><td>Defer — no public-facing product surface until Gate 0 clears; the landing page becomes useful the day the pilot search starts.</td></tr>
+<tr><td>Origin-era integration code (warehouse sync, actuals matching) encodes the previous deployment's environment.</td><td>Keep but generalize behind adapters before any pilot — it's evidence of depth, but it must not assume one company's data shapes.</td></tr></tbody>
+  </table></div>
+<h3>Monetization reality</h3><p>Zero rungs in code (no auth beyond an env var, no billing, no tenancy) — appropriate, since selling is gated anyway. The research says the eventual model is per-fleet SaaS priced against $10K/hr downtime, with a free instrumented pilot as the wedge. Build nothing monetization-shaped until Gate 0 clears; build the quality floor instead, because a tool allocating $10K/hr resources will be judged on trustworthiness first.</p>
+<h3>Score adjustments (evidence-based)</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th>Dimension</th><th>Was</th><th>Now</th><th>Why</th></tr></thead>
+    <tbody><tr><td>feasibility</td><td>6</td><td>7</td><td>Research alone would guess 6 for 'niche vertical planning SaaS'; the evidence shows ~20.3K LOC of working, production-shaped product. Held below 8 by the missing quality floor: zero tests, live type errors, no CI.</td></tr>
+<tr><td>goToMarket</td><td>6</td><td>3</td><td>The evidence pass surfaced what market research never would: the natural customer base sits in the builder's employer's orbit, and the public repo exposes origin-deployment data — GTM is gated on legal/compliance clearance, not channel access.</td></tr>
+<tr><td>whyNow</td><td>6</td><td>7</td><td>The 2026-27 gas completions ramp (LNG wave, record EIA projections, Appalachian crew additions) is stronger than a generic 'oilfield digitization' thesis — the window is real and near-term.</td></tr></tbody>
+  </table></div>
+  </section>
+<section class="report-section">
+    <h2>Build kit</h2>
+    <p class="section-sub">Generated 2026-07-18</p>
+    <h3>PRD</h3>
+<dl class="prd-dl"><dt>Problem</dt><dd>A working operator-side sand logistics planner has outgrown its internal-tool origins but is blocked from becoming a product by two gates (public-repo data exposure; unresolved IP/employment position) and from being trustworthy by a missing quality floor (no tests, live type errors, env-var auth).</dd><dt>Target user</dt><dd>Today: the builder, as maintainer of a portfolio-grade asset. Post-Gate-0: completions and sand-logistics coordinators at gas-weighted operators running 2+ frac fleets.</dd></dl>
+<h4>Core features (v1)</h4><ol><li>Gate 0a — containment: repository private, then a history rewrite removing the planning export, origin-era seeds, and attached internal documents; verified by a full-history sweep</li><li>Gate 0b — a written IP/conflict position (employment agreement review; carve-out if needed) before any customer-facing step</li><li>Delete server/replit_integrations and fix the two live type errors in workload.tsx; rename the package from its boilerplate name</li><li>Test harness (Vitest) with the truck-demand engine covered first, then allocation-total and lane-cascade math; CI gate on test + typecheck</li><li>Real authentication and per-organization tenancy replacing the PLANNER_USERNAMES env var</li><li>Audit trail: who changed which allocation/schedule when — the trust feature multi-user planning requires</li><li>Analytics v1: plan-vs-actual variance and NPT rollups from data already captured</li></ol>
+<h4>Non-goals (v1)</h4><ul><li>No customer conversations, pilots, landing-page promotion, or pricing experiments until both Gate 0 items are resolved in writing</li><li>No dispatch/telematics features — plan-time is the wedge; dispatch is the incumbents' fortified ground</li><li>No billing infrastructure this cycle</li><li>No basin-specific integrations that assume any one company's data shapes</li><li>No mobile apps yet — responsive web after the quality floor</li></ul>
+<h4>Success metrics</h4><ul><li>Gate 0 closed: repo private (or verifiably clean if republished) and the IP memo exists</li><li>A full-history sweep for origin-deployment identifiers returns zero matches</li><li>CI green with the demand engine and cascade math under test; tsc clean</li><li>Auth + tenancy demoable with two isolated orgs</li><li>/idea-fit re-run at day 90 produces BUILD ON or a deliberate, documented decision to keep it internal</li></ul>
+<h3>Tech stack</h3>
+<div class="callout"><strong>Keep the current stack: React 18 + TypeScript + Vite, Express, Drizzle ORM + Postgres, Radix/shadcn UI</strong> — The stack is fine and the product works; the debt is hygiene, not architecture. A fit report never proposes a rewrite — it proposes deleting the boilerplate that came with the app's origin and building the missing quality floor inside what exists.</div>
+<h3>Starter backlog</h3>
+<div class="table-wrap"><table>
+    <thead><tr><th></th><th>Task</th><th>Description</th></tr></thead>
+    <tbody><tr><td><span class="pri pri-P0">P0</span></td><td>Gate 0a: repo containment + history rewrite</td><td>Private now; git filter-repo removing the export file, origin-era seeds, and attached internal docs; full-history verification sweep after.</td></tr>
+<tr><td><span class="pri pri-P0">P0</span></td><td>Gate 0b: written IP/conflict position</td><td>Employment agreement review and a one-page memo on what may be built, owned, and sold. Non-code, gates everything customer-facing.</td></tr>
+<tr><td><span class="pri pri-P0">P0</span></td><td>Delete Replit boilerplate + fix live type errors</td><td>Remove server/replit_integrations (13 of 15 tsc errors), fix workload.tsx startDate/endDate errors, rename package.</td></tr>
+<tr><td><span class="pri pri-P0">P0</span></td><td>Test harness with demand-engine coverage</td><td>Vitest; first suites on truck-demand math, allocation totals, lane cascading; CI gate on test+typecheck.</td></tr>
+<tr><td><span class="pri pri-P1">P1</span></td><td>Real auth + per-org tenancy</td><td>Replace PLANNER_USERNAMES env var; two isolated demo orgs prove it.</td></tr>
+<tr><td><span class="pri pri-P1">P1</span></td><td>Audit trail</td><td>Change history on schedules and allocations (already on the README roadmap).</td></tr>
+<tr><td><span class="pri pri-P2">P2</span></td><td>Analytics v1: plan-vs-actual + NPT rollups</td><td>Built from data the app already captures; the retention rung.</td></tr>
+<tr><td><span class="pri pri-P2">P2</span></td><td>Responsive pass for field use</td><td>Tablet-first for the Gantt and grid.</td></tr>
+<tr><td><span class="pri pri-P2">P2</span></td><td>Day-90 /idea-fit re-run</td><td>Re-verdict with gates resolved; either start the pilot search or formally choose internal-tool status.</td></tr></tbody>
+  </table></div>
+<h3>Build prompt <span class="section-sub">paste into Claude Code, Cursor, Lovable, Bolt, or ChatGPT</span></h3>
+<div class="prompt-box">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('build-prompt').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy prompt',1500)})">Copy prompt</button>
+        <pre id="build-prompt">You are working in FleetSync, an existing operator-side frac sand logistics planner — React 18 + TypeScript + Vite frontend (Radix/shadcn), Express backend, Drizzle ORM on Postgres. It is a working ~20K-LOC product born as an internal tool; this is a brownfield hardening engagement, not a greenfield build. Do not rewrite, do not restyle, do not add product surface.
+
+Context you must respect: this repository had an internal-tool origin, and repository hygiene work (history rewrite, data-file removal) is being handled separately by the owner — never commit data exports, seed data with real-looking operational content, or any company-identifiable strings. If you encounter files like planning exports or attached internal documents, flag them to the owner; do not copy their contents anywhere.
+
+What already works and must not regress: the frac-job Gantt with drag-and-drop and lane cascading; the Excel-like daily allocation grid with inline/bulk editing, drag-to-fill, and its three summary footer rows (hauler totals, frac needs, surplus); real-time conflict detection; scenario management with sandbox isolation; the truck-demand calculation engine with date-segmented overrides; the NPT journal; CSV/XLSX import and export.
+
+Build, in this order:
+1. Delete server/replit_integrations entirely (dead chat/image scaffolding from the app's origin; it accounts for 13 of the 15 current tsc errors). Rename the package from 'rest-express' to 'fleetsync'. Get `npx tsc` fully clean, including the two real errors in client/src/pages/workload.tsx (startDate/endDate accessed on a type that lacks them — trace whether the schema or the page is wrong before patching).
+2. Stand up Vitest with a test script in package.json. First suites, in priority order: the truck-demand engine (stages/day × tons/stage → loads/day, storage-type and override paths), allocation grid totals (hauler totals, frac needs, surplus math), and lane-cascading date arithmetic. These calculations allocate real trucks against real downtime costs — they are the money math and currently have zero coverage.
+3. Add a CI workflow that gates on typecheck + tests.
+4. Replace the PLANNER_USERNAMES env-var access control with real authentication and per-organization tenancy (all existing entities scoped to an org; two seeded demo orgs proving isolation). Keep the planner/viewer role distinction.
+5. Add an audit trail: who changed which schedule/allocation/scenario and when, queryable per frac job.
+
+Do NOT build: dispatch or telematics features, billing, mobile apps, marketing/landing surface, or any integration that assumes one company's data shapes. Keep all seed/demo data obviously fictional (generic pad names like 'Pad A-01', generic hauler names).
+
+Start with step 1 and stop after `npx tsc` is clean and the boilerplate is gone — show me the diff before touching auth or tests.
+
+--- BUSINESS CONTEXT ---
+Product: hardware-neutral, operator-side frac sand logistics planning (Gantt + daily truck-allocation grid + scenarios). Wedge: completions/sand-logistics coordinators at gas-weighted shale operators running multiple frac fleets — a plan-time buyer the incumbents structurally ignore.
+Scores: Opportunity 6/10 (narrow but real-budget buyer set); Problem 8/10 (a crew consumes a truckload every ~10 minutes 24/7; last-mile is up to one-third of delivered sand cost; waiting-on-sand runs $5,500-$10,000+/hr); Feasibility 7/10 (built and production-shaped, held down by the missing quality floor this engagement fixes); Why-now 7/10 (2026-27 LNG wave: record EIA gas-output projections, Appalachia needs ~50 more rigs/frac crews, ~824 DUCs queued, sand intensity ~2,500 lb/lateral-ft).
+Market gap: every incumbent's software is welded to their hardware or services — PropX/PropConnect (Liberty) to containers, Solaris to silos, Atlas Opti to its own Permian sand-and-trucking loop, Vorto to dispatch marketplaces. The operator's neutral cross-fleet planning layer defaults to Excel. FleetSync sells the plan itself.
+Current verdict from the fit report: PARK the product ambition pending two non-market gates (public-repo data hygiene, in progress; written IP/employment-conflict clarity) — which is why this engagement builds trust infrastructure (tests, auth, audit trail) and explicitly not customer-facing surface. If the gates clear, per-fleet SaaS at $1,500-$4,000/fleet/mo (est.) priced against $10K/hr downtime is the model, entered via free instrumented pilots.
+Key risks to respect: quality trust (the demand engine allocates expensive resources — test it), data hygiene (nothing company-identifiable ever enters the repo), and neutrality (no vendor- or company-specific assumptions in core logic).
+Sources and full research: ideas/frac-sand-logistics-planner/idea.json in the Idea Lab library; estimates marked (est.).</pre>
+      </div>
+  </section>
+<section class="report-section">
+    <h2>Sources</h2>
+    
+    <ol class="sources"><li><a href="https://www.aogr.com/magazine/cover-story/last-mile-solutions-enhance-efficiency-reliability-of-proppant-supply-chain">AOGR — Last-mile solutions and delivered-cost share of frac sand logistics</a></li><li><a href="https://logistixiq.com/frac-sand-delivery/">LogistixIQ — Frac sand delivery cadence and waiting-on-sand NPT costs</a></li><li><a href="https://plgconsulting.com/wp-content/uploads/2018/01/JPM-Transportation-and-Logistics-Frac-Sand-Logistics-by-PLG-Consulting-0112018.pdf">PLG Consulting — Frac sand transportation &amp; logistics economics</a></li><li><a href="https://www.propx.com/">PropX — Last-mile logistics and the PropConnect platform</a></li><li><a href="https://www.atlas.energy/our-solutions/">Atlas Energy Solutions — Opti Ordering / Opti Dispatch last-mile platform</a></li><li><a href="https://sandboxlogistics.com/benefits.php">SandBox Logistics (Solaris) — containerized last-mile systems</a></li><li><a href="https://www.eia.gov/todayinenergy/detail.php?id=67166">EIA — US natural gas production to reach record highs in 2026 and 2027</a></li><li><a href="https://www.crudeir.com/duc-wells-by-basin-2026/">CrudeIR — DUC wells by basin 2026 (Appalachia ~824)</a></li><li><a href="https://www.aogr.com/magazine/editors-choice/appalachian-gas-producers-meet-regional-demand-growth-lng-export-needs">AOGR — Appalachian producers, LNG demand, rigs/crews needed, sand intensity</a></li><li><a href="https://www.hartenergy.com/upstream/shale-plays/he-appalachia-marcellus-utica-shale-2026/">Hart Energy — Shale Outlook 2026: Appalachia</a></li><li><a href="https://petroleumconnection.com/any-recommendations-on-good-ticketing-inventory-software-for-frac-sand-mine-operations/">Petroleum Connection — organic demand thread for frac sand ops software</a></li></ol>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>Generated by <code>npm run build</code> · Add ideas with the <code>/idea-research</code> skill · Format inspired by <a href="https://www.ideabrowser.com/">ideabrowser.com</a></p>
+</footer>
+</body>
+</html>
