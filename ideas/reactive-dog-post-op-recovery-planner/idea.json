@@ -171,5 +171,56 @@
     { "title": "The Zebra — Pet insurance trends 2025 (+126% insured pets 2019-2023)", "url": "https://www.thezebra.com/resources/personal-finance/pet-insurance-trends/" },
     { "title": "GM Insights — Pet Insurance Market ($14.2B 2025 → $46.8B 2035)", "url": "https://www.gminsights.com/industry-analysis/pet-insurance-market" },
     { "title": "subredditstats — r/reactivedogs (~69K members)", "url": "https://subredditstats.com/r/reactivedogs" }
-  ]
+  ],
+  "buildKit": {
+    "generatedAt": "2026-07-18",
+    "prd": {
+      "problem": "A dog comes home from TPLO surgery with a generic discharge sheet that assumes a calm dog, an open floor plan, and an owner who can lift 90 pounds. Owners of reactive, high-energy, or crate-refusing dogs in small apartments have no plan that fits their actual situation, so they end up crowdsourcing advice from Facebook groups at 2 a.m. — and some dogs re-injure a $3.5K-$7K repair.",
+      "targetUser": "Primary: the owner of a dog scheduled for (or just out of) TPLO surgery — anxious, has already spent thousands, actively searching Facebook groups and Google for help. Secondary (post-MVP): the vet surgical practice that hands out the plan at discharge.",
+      "coreFeatures": [
+        "Intake form: procedure (TPLO only for v1), breed/size/age, behavior profile (crate refusal, separation anxiety, reactivity triggers, energy level), home layout (stairs, floor plan, space for a confinement pen), other pets in the home, caretaker's physical limits (lifting, solo vs. multi-person household)",
+        "TPLO protocol template library: vet-reviewed, staged week-by-week content (weeks 1-2, 3-4, 5-8, 9-12) covering confinement, activity limits, and medication/PT checkpoints",
+        "Plan generator: maps intake answers onto the template library to produce a personalized staged plan — confinement setup sized to the actual space, enrichment/mental-stimulation rotation for high-drive breeds, harness/equipment picks matched to the caretaker's limits, med/ice/PT checklist",
+        "Escalation script library: 'is this normal?' red-flag tree for common post-op scares (swelling, limping, incision issues, refusing to eat), every branch ending in a prepared script for calling the vet — never a diagnosis",
+        "Printable/PDF plan delivery + Stripe Checkout for the $39 one-time purchase",
+        "Email delivery of the plan plus a simple weekly check-in drip for the 8-12 week recovery arc"
+      ],
+      "nonGoals": [
+        "No native mobile app for v1 — responsive web only",
+        "No SMS/text companion for v1 — email only",
+        "No procedures beyond TPLO in v1 (TTA, FHO, IVDD come after the wedge is proven)",
+        "No clinic multi-tenant dashboard or white-label branding yet — that's the Backend rung, post-traction",
+        "No AI chat / freeform Q&A — v1 is template-driven plan generation, not a chatbot, to keep the vet-liability surface small",
+        "No user accounts required to buy or receive a plan — a purchase + emailed link is enough for v1"
+      ],
+      "successMetrics": [
+        "100 paid $39 plans within 90 days of public launch",
+        "At least 10 unsolicited positive mentions/testimonials sourced from the TPLO Facebook groups or r/reactivedogs",
+        "≥50% of buyers open at least 3 of the weekly check-in emails (proxy for the plan actually being used, not just bought)",
+        "One signed clinic pilot (free 90-day trial) by end of the 90-day window"
+      ]
+    },
+    "techStack": {
+      "suggested": "Next.js (App Router) + Supabase (Postgres) + Stripe Checkout + Resend for email + Vercel hosting",
+      "rationale": "Plan generation is template/rules logic, not heavy AI inference, so a standard serverless web stack ships fastest and cheapest. Supabase gives a real database from day one without extra setup cost, which matters once the Clinic License (multi-tenant) rung gets built later — no migration off a toy backend required."
+    },
+    "backlog": [
+      { "title": "Scaffold Next.js + Supabase project, deploy skeleton to Vercel", "description": "Empty app, database connection, CI deploy working end to end.", "priority": "P0" },
+      { "title": "Build the intake form", "description": "Procedure, breed/size/age, behavior profile, home layout, other pets, caretaker limits — stored to Supabase.", "priority": "P0" },
+      { "title": "Write the TPLO protocol template library", "description": "Staged week-by-week content sourced from published rehab protocols (TopDog's public guides, ACVS/dvm360 material); flagged for DVM advisor review before anything ships live.", "priority": "P0" },
+      { "title": "Build the plan-generation logic", "description": "Maps intake answers to template sections: confinement setup, enrichment rotation, equipment picks, med/PT checklist.", "priority": "P0" },
+      { "title": "Build the escalation script library", "description": "Red-flag decision tree for common post-op concerns; every path ends at a 'call your vet' script, never a diagnosis.", "priority": "P0" },
+      { "title": "Build the printable/PDF plan view", "description": "Clean, print-friendly rendering of the generated plan the owner can save or hand to a pet sitter.", "priority": "P0" },
+      { "title": "Integrate Stripe Checkout", "description": "$39 one-time purchase gates plan delivery; webhook confirms payment before emailing the plan.", "priority": "P0" },
+      { "title": "Get DVM/rehab-vet-tech advisor sign-off on the template library", "description": "Non-technical but blocking — nothing ships to real owners before this review.", "priority": "P0" },
+      { "title": "Wire up plan delivery + weekly check-in email drip", "description": "Resend integration: immediate plan email on purchase, then a light weekly check-in for the 8-12 week arc.", "priority": "P1" },
+      { "title": "Build the free lead-magnet landing page", "description": "Reactive Dog Crate-Rest Survival Checklist, email capture, feeds the $39 plan funnel.", "priority": "P1" },
+      { "title": "Add equipment list with product links", "description": "Harnesses, pens, ramps matched to caretaker limits and home layout from the intake.", "priority": "P1" },
+      { "title": "Instrument basic analytics", "description": "Purchases, drip open rates, funnel from lead magnet to paid plan — enough to know if it's working.", "priority": "P1" },
+      { "title": "Add Recovery+ Companion subscription", "description": "$19/mo adaptive check-ins and triage guidance layered on top of the base plan.", "priority": "P2" },
+      { "title": "Build clinic pilot mode", "description": "Bulk intake codes handed out at discharge + simple clinic branding toggle — the Backend value-ladder rung.", "priority": "P2" },
+      { "title": "Add additional procedure templates", "description": "TTA, FHO, IVDD — expand beyond the TPLO wedge once it's proven.", "priority": "P2" }
+    ],
+    "buildPrompt": "Build Pawscript, a web app that generates personalized post-surgery recovery plans for dogs — starting with TPLO knee surgery.\n\nThe problem: vet clinics send dogs home from TPLO surgery with a generic recovery sheet that assumes a calm dog, an open floor plan, and an owner who can lift 90 pounds. Reality is high-energy or reactive dogs in small apartments, nervous dogs who refuse crate rest, and owners managing alone. The sheet works in the clinic and falls apart at home, so owners end up crowdsourcing advice from Facebook groups at 2am, and some dogs re-injure a $3,500-$7,000 surgical repair from too much activity too soon.\n\nThe solution: a 5-10 minute intake form (procedure, breed, size, age, behavior profile including crate refusal and reactivity triggers, home layout including stairs and floor space, other pets in the household, and the caretaker's physical limits) generates a staged week-by-week recovery plan matched to that specific dog and home: a confinement setup sized to the actual space, an enrichment/mental-stimulation rotation for high-drive breeds, harness and equipment picks that fit what the caretaker can physically manage, a medication/ice/PT checklist, and an escalation script for 'is this normal?' moments that always routes to calling the vet rather than guessing.\n\nTarget user: an anxious dog owner who has just paid $3,500-$7,000 for TPLO surgery and is actively searching for help online and in TPLO recovery Facebook groups.\n\nTech stack: Next.js (App Router) for the frontend and API routes, Supabase (Postgres) for the database, Stripe Checkout for the one-time $39 plan purchase, Resend for transactional email, deployed on Vercel. This is template-driven plan generation, not an AI chatbot — keep it that way; it matters for the vet-liability boundary (never diagnose, always route concerning symptoms to 'call your vet').\n\nBuild in this order:\n1. Scaffold the Next.js + Supabase project and get a bare deploy working on Vercel.\n2. Build the intake form covering procedure, breed/size/age, behavior profile, home layout, other pets, and caretaker limits, saving to Supabase.\n3. Write a TPLO-only protocol template library structured by recovery week (weeks 1-2, 3-4, 5-8, 9-12), covering confinement, activity limits, and medication/PT checkpoints. Mark this content clearly as a draft that needs veterinary review before going live.\n4. Build the plan-generation logic that maps intake answers onto the template library to produce a personalized staged plan: confinement setup, enrichment rotation, equipment recommendations, and the med/PT checklist.\n5. Build the escalation script library — a red-flag decision tree for common post-op concerns (swelling, limping, incision issues, appetite loss) where every branch ends in a prepared 'call your vet' script, never a diagnosis.\n6. Build a clean, printable plan view (PDF-friendly).\n7. Integrate Stripe Checkout for the $39 one-time purchase, gating plan delivery behind payment confirmation via webhook.\n8. Wire up email delivery of the finished plan via Resend.\n\nDo NOT build: a native mobile app, SMS/text messaging, support for surgeries other than TPLO, a multi-tenant clinic dashboard or white-label branding, or any freeform AI chat/Q&A interface. All of those come later, after this wedge is proven with real paying customers.\n\nStart by scaffolding the project and building the intake form end to end (form → Supabase). Stop and show me before writing any of the protocol template content — I want to review the medical framing before it's baked into the generator."
+  }
 }

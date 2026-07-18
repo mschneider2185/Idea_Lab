@@ -254,6 +254,47 @@
           "url": { "type": "string" }
         }
       }
+    },
+    "buildKit": {
+      "type": "object",
+      "description": "Shovel-ready build package generated from a researched idea — the IdeaBrowser 'Idea Builder' equivalent. Produced by the /idea-build skill, never hand-authored from imagination.",
+      "properties": {
+        "generatedAt": { "type": "string", "description": "ISO date (YYYY-MM-DD)" },
+        "prd": {
+          "type": "object",
+          "properties": {
+            "problem": { "type": "string" },
+            "targetUser": { "type": "string" },
+            "coreFeatures": { "type": "array", "items": { "type": "string" } },
+            "nonGoals": { "type": "array", "items": { "type": "string" }, "description": "Explicitly out of scope for v1 — what NOT to build" },
+            "successMetrics": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "techStack": {
+          "type": "object",
+          "properties": {
+            "suggested": { "type": "string", "description": "e.g. 'Next.js + Supabase + Stripe'" },
+            "rationale": { "type": "string" }
+          }
+        },
+        "backlog": {
+          "type": "array",
+          "description": "Ordered starter backlog for the MVP build",
+          "items": {
+            "type": "object",
+            "required": ["title", "priority"],
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "priority": { "type": "string", "enum": ["P0", "P1", "P2"] }
+            }
+          }
+        },
+        "buildPrompt": {
+          "type": "string",
+          "description": "Single paste-ready prompt (with full idea context baked in) for Claude Code, Cursor, Lovable, Bolt, or any AI builder to start from."
+        }
+      }
     }
   },
   "definitions": {

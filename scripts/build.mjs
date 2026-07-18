@@ -411,6 +411,47 @@ function renderIdea(idea) {
     );
   }
 
+  // Build kit
+  if (idea.buildKit) {
+    const bk = idea.buildKit;
+    const inner = [];
+    if (bk.prd) {
+      const p = bk.prd;
+      inner.push(`<h3>PRD</h3>`);
+      const dl = [
+        p.problem && `<dt>Problem</dt><dd>${esc(p.problem)}</dd>`,
+        p.targetUser && `<dt>Target user</dt><dd>${esc(p.targetUser)}</dd>`,
+      ]
+        .filter(Boolean)
+        .join("");
+      if (dl) inner.push(`<dl class="prd-dl">${dl}</dl>`);
+      if (p.coreFeatures?.length) inner.push(`<h4>Core features (v1)</h4>${list(p.coreFeatures, true)}`);
+      if (p.nonGoals?.length) inner.push(`<h4>Non-goals (v1)</h4>${list(p.nonGoals)}`);
+      if (p.successMetrics?.length) inner.push(`<h4>Success metrics</h4>${list(p.successMetrics)}`);
+    }
+    if (bk.techStack) {
+      inner.push(`<h3>Tech stack</h3>`);
+      if (bk.techStack.suggested) inner.push(`<div class="callout"><strong>${esc(bk.techStack.suggested)}</strong>${bk.techStack.rationale ? ` — ${esc(bk.techStack.rationale)}` : ""}</div>`);
+    }
+    if (bk.backlog?.length) {
+      inner.push(`<h3>Starter backlog</h3>`);
+      inner.push(
+        table(
+          ["", "Task", "Description"],
+          bk.backlog.map((b) => [`<span class="pri pri-${esc(b.priority)}">${esc(b.priority)}</span>`, esc(b.title), esc(b.description || "")])
+        )
+      );
+    }
+    if (bk.buildPrompt) {
+      inner.push(`<h3>Build prompt <span class="section-sub">paste into Claude Code, Cursor, Lovable, Bolt, or ChatGPT</span></h3>`);
+      inner.push(`<div class="prompt-box">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('build-prompt').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy prompt',1500)})">Copy prompt</button>
+        <pre id="build-prompt">${esc(bk.buildPrompt)}</pre>
+      </div>`);
+    }
+    parts.push(section("Build kit", inner.join("\n"), bk.generatedAt ? `Generated ${bk.generatedAt}` : ""));
+  }
+
   // Sources
   if (idea.sources?.length) {
     parts.push(
@@ -596,5 +637,28 @@ td { border-bottom: 1px solid var(--border); padding: 9px 10px; vertical-align: 
 
 .sources { font-size: 14px; }
 .sources li { margin-bottom: 4px; }
+
+.report-section h4 { font-size: 14px; margin: 16px 0 6px; color: var(--text); }
+.prd-dl dt { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-faint); margin-top: 10px; }
+.prd-dl dd { margin: 2px 0 0; color: var(--text-soft); }
+.pri { display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 6px; }
+.pri-P0 { background: #fee2e2; color: #991b1b; }
+.pri-P1 { background: #fef3c7; color: #92400e; }
+.pri-P2 { background: var(--bg); color: var(--text-faint); border: 1px solid var(--border); }
+@media (prefers-color-scheme: dark) {
+  .pri-P0 { background: #451a1a; color: #fca5a5; }
+  .pri-P1 { background: #452a06; color: #fcd34d; }
+}
+.prompt-box { position: relative; margin-top: 8px; }
+.prompt-box pre {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 18px;
+  font-size: 13px; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.copy-btn {
+  position: absolute; top: 10px; right: 10px; font-size: 12px; font-weight: 700;
+  background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 6px 10px; cursor: pointer;
+}
+.copy-btn:hover { opacity: 0.9; }
 `;
 }
