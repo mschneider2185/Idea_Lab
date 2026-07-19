@@ -81,6 +81,7 @@ adds a "Build kit" section to its report page.
 | [Reactive Dog Post-Op Recovery Planner](ideas/reactive-dog-post-op-recovery-planner/idea.json) ("Pawscript") | researched |
 | [Self-Hosted Household Finance Command Center](ideas/household-finance-command-center/idea.json) ("FEV") | building — with a [fit report](ideas/household-finance-command-center/idea.json) diffing the real repo against the research |
 | [Operator-Side Frac Sand Logistics Command Center](ideas/frac-sand-logistics-planner/idea.json) ("FleetSync") | building — fit report verdict: PARK pending data-hygiene + IP gates |
+| [Reliability-Grade Website + CS Agent Builds with a Monitored Retainer](ideas/agent-systems-local-business/idea.json) ("Agent Systems for Local Business") | researched — fit report verdict: REFOCUS (demo + one warm pilot before any volume gate) |
 | [VR Safety Drill Builder for High-Risk Crews](ideas/vr-safety-drill-builder/idea.json) | seed |
 | [Backyard Home (ADU) Feasibility Reports](ideas/backyard-adu-feasibility-reports/idea.json) | seed |
 

@@ -1,0 +1,232 @@
+{
+  "slug": "agent-systems-local-business",
+  "name": "Agent Systems for Local Business",
+  "title": "Reliability-Grade Website + CS Agent Builds with a Monitored Retainer",
+  "oneLiner": "Build and hand off a website plus customer-service agent for local businesses, then charge a monthly agent-monitored management retainer: operations-grade reliability (uptime, monitoring, an agent that provably stays in its lane) as the product, in a field of white-label chatbot configurators.",
+  "status": "researched",
+  "researchedAt": "2026-07-19",
+  "tags": {
+    "type": "Productized service + SaaS-like retainer",
+    "market": "Local business web services / SMB AI",
+    "target": "Local service businesses (trades, clinics, salons, home services) in the builder's metro",
+    "mainCompetitor": "White-label GoHighLevel agencies",
+    "trend": "SMB AI adoption ramp + build-cost collapse"
+  },
+  "scores": {
+    "opportunity": {
+      "score": 6,
+      "note": "~27% of US small businesses still have no website in 2026 (trades and contractors run 45-56% without), and care retainers are an established spend at $100-$300/mo full-service. Real budgets, but a solo operator serves tens of clients, not hundreds; the ceiling is a healthy lifestyle business, not venture scale."
+    },
+    "problemSeverity": {
+      "score": 7,
+      "note": "A local business without a site loses an est. 20-35% of referred customers at the verification step; missed messages directly cost bookings in home services and clinics. Capped below 8 because free substitutes (Facebook pages, DIY builders) absorb the least motivated buyers."
+    },
+    "feasibility": {
+      "score": 8,
+      "note": "The build half is demonstrated: the builder shipped a full-stack tested app in one day (fev, 2026-07-17, 161/161 tests, deployed). Docked two points because the actual product motion is local sales and ongoing service, which is unproven; see fit report."
+    },
+    "whyNow": {
+      "score": 7,
+      "note": "SMB AI use jumped from 36% (2023) to 89% (2026, US Chamber), genAI use 58%, yet only ~17.7% have paid for AI; agents now resolve ~67% of CS queries (Intercom). Build costs collapsed. The same forces flood the field with competitors, which is why 7 and not 9."
+    }
+  },
+  "businessFit": {
+    "revenuePotential": {
+      "rating": "$$",
+      "note": "20 retainer clients at $300-500/mo is $72K-$120K/yr recurring on top of $2K-3.5K builds (est.). Meaningful income-replacement math for one operator; not a scalable software business unless delivery goes remote and productized."
+    },
+    "executionDifficulty": {
+      "score": 5,
+      "note": "Build is easy for this builder; the difficulty is the service business around it: sales conversations, expectations, SLAs, churn. Boring difficulty, not technical difficulty."
+    },
+    "goToMarket": {
+      "score": 4,
+      "note": "In-person and warm-referral motion in a small metro. Low channel risk, high founder-time risk: every client is bought with hours the builder has not historically spent this way. See fit report scoreAdjustments."
+    },
+    "founderFit": "Strong on the wedge, weak on the motion. The builder's operations background (monitoring, incident discipline, uptime accountability) is exactly the differentiator the white-label field lacks, and build speed is proven. But five weeks of commit history show all voluntary output going to building products, none to selling, and the agent-reliability artifact the pitch leans on is not yet stable in the builder's own stack. The honest read: right person for the product, unproven appetite for the sales motion."
+  },
+  "summary": {
+    "problem": "Local service businesses lose referred customers at the verification step (no site, stale site) and lose leads to missed messages. The AI tools sold to fix this are configured once by white-label agencies and then rot: nobody owns reliability, monitoring, or what the bot does when it is wrong.",
+    "solution": "A productized build (website + customer-service agent grounded in the business's real context, with explicit refusal behavior for out-of-scope queries) handed off clean, plus a monthly agent-monitored management retainer: uptime and correctness watched by agents, incidents surfaced to the operator, monthly proof-of-monitoring report to the client.",
+    "wedge": "Operations-grade reliability as the product. Not 'we build AI chatbots' but 'your site and your agent stay up, stay correct, and refuse what they should refuse, and here is the monitoring that proves it.' The refusal demo and the alert view are the pitch."
+  },
+  "whyNow": {
+    "narrative": "SMB AI adoption crossed from curiosity to default in three years, but paid adoption lags usage by 5x, which means the market is primed but not yet locked in. Meanwhile agent build costs collapsed: a solo builder with modern tooling ships in days what agencies quoted five figures for in 2024. The unclaimed position is trust: the first wave of AI-agency configurators created a credibility mess that a reliability-first operator can pitch directly against.",
+    "drivers": [
+      "SMB AI use 36% (2023) to 89% (2026, US Chamber); genAI 58%",
+      "Only ~17.7% of small businesses have paid for AI: usage-to-paid gap is the open window",
+      "AI agents resolve ~67% of CS queries on average (Intercom, 2026)",
+      "Build-cost collapse: one-day full-stack ships are now solo-feasible (evidenced in this library: fev)",
+      "Credibility backlash against the guru-driven 'AI automation agency' wave leaves reliability as the differentiator"
+    ]
+  },
+  "proofSignals": {
+    "searchDemand": [
+      { "term": "website maintenance plan small business", "volume": "n/a (no keyword tool run)", "note": "Established commercial category with published pricing benchmarks, which itself proves paid demand." },
+      { "term": "AI chatbot for small business", "volume": "n/a (no keyword tool run)", "note": "Dozens of 2026 listicle/comparison pages compete for it; heavy commercial intent, heavy competition." },
+      { "term": "AI receptionist local business", "volume": "n/a (no keyword tool run)", "note": "Podium sells an AI receptionist add-on at $99/mo; incumbents naming the category validates it." }
+    ],
+    "communities": [
+      { "platform": "LinkedIn", "name": "AI agency operator posts", "signal": "'Why AI agencies are dying in 2026: technical skills are not enough' - practitioner signal that distribution/sales, not tech, is the failure mode. Confirms the fit report's core concern.", "url": "https://www.linkedin.com/posts/nicholas-puruczky-113818198_why-ai-agencies-are-dying-in-2026-and-whats-activity-7409246433360416770-tk4X" },
+      { "platform": "Vendor education", "name": "BotPenguin / chatbot-reseller guides", "signal": "An entire how-to-sell-chatbots-to-local-businesses content industry exists, proving both demand and a crowded reseller field.", "url": "https://botpenguin.com/blogs/how-to-sell-chatbots-to-local-businesses" }
+    ],
+    "marketStats": [
+      { "stat": "~27% of US small businesses have no website in 2026 (down from 36% in 2020); trades/contractors 45-56% without", "source": "LeadsAgent", "url": "https://leadsagent.io/blog/businesses-without-website-statistics" },
+      { "stat": "SMB website maintenance runs $100-$300/mo full-service; tiers $50-100 basic, $150-250 popular, $400+ premium", "source": "Webstacks / Network Solutions 2025-2026 guides", "url": "https://www.webstacks.com/blog/how-much-does-website-maintenance-cost" },
+      { "stat": "Chatbot agency benchmarks: $2,000-$5,000 setup plus $500-$2,500/mo recurring (est., promotional source)", "source": "AI Business", "url": "https://aibusiness.vc/solo/ai-chatbot-local-business" },
+      { "stat": "89% of small businesses use AI in some capacity in 2026, up from 36% in 2023; 58% use genAI; only 17.7% have paid for AI", "source": "US Chamber of Commerce 2026 via Booth Associates", "url": "https://boothassociatesllc.com/ai-statistics-small-business-2026.html" },
+      { "stat": "AI agents average 67% resolution on customer-service queries (Intercom, 2026); ~38% of SMBs run AI assistants/automation", "source": "Citrusbug AI agents statistics", "url": "https://citrusbug.com/blog/ai-agents-statistics/" }
+    ]
+  },
+  "marketGap": {
+    "narrative": "The field sells configuration, not accountability. Platforms (GoHighLevel, Podium, Birdeye) sell tools to businesses or white-label shells to agencies; thousands of agencies sell setup. Almost nobody contracts on reliability: monitored uptime, correctness, refusal behavior, and an alert trail the client can see. That position is open because it requires operations discipline the configurator crowd does not have, and it is the retainer justification the others lack.",
+    "competitors": [
+      { "name": "White-label GoHighLevel agencies", "positioning": "Full-stack SMB marketing system, $97-$297/mo platform + agency markup; white-label at $497/mo", "weakness": "Configuration-and-churn economics; no reliability accountability; guru-wave credibility damage" },
+      { "name": "Podium", "positioning": "Reviews + messaging platform, $399-$999/mo, AI receptionist add-on $99/mo", "weakness": "Self-serve tool, not a service; SMB still owns outcomes; pricing above solo-operator retainer for less accountability" },
+      { "name": "Birdeye", "positioning": "Multi-location reputation platform, $299-$449/location/mo", "weakness": "Enterprise-leaning; single-location local businesses are an afterthought" },
+      { "name": "DIY (Wix/Squarespace AI, Facebook page)", "positioning": "Free to cheap, owner-operated", "weakness": "The owner is the maintainer; sites rot; no agent, no monitoring; absorbs only the least motivated buyers" },
+      { "name": "Non-consumption (word of mouth only)", "positioning": "Do nothing", "weakness": "Loses est. 20-35% of referrals at the verification step; the lead-magnet audit targets exactly this" }
+    ]
+  },
+  "executionPlan": {
+    "mvp": [
+      "Demo asset: a realistic fake local business (one chosen client type) with the full stack: site, CS agent grounded in the business context, working lead capture",
+      "The agent's refusal reel: scripted out-of-scope queries it correctly declines or hands off, on camera",
+      "The monitoring/alert view (mock acceptable at demo stage): what the operator sees the moment the site goes down or the agent fumbles, and the alert that fires",
+      "The one-page offer: one client type, one price, no menu",
+      "A monthly client-facing report template: uptime, conversations handled, leads captured, incidents caught"
+    ],
+    "firstCustomers": [
+      "One warm pilot from the builder's existing network (LinkedIn presence, local contacts), free or discounted, instrumented",
+      "Only after a converted pilot: a scheduled pitch-volume gate through local warm referrals and in-person delivery",
+      "Explicitly not: cold pitching before the demo asset and pilot exist (see fit report)"
+    ],
+    "pricing": {
+      "model": "One-time build + monthly monitored-management retainer; all figures aligned to researched benchmarks and marked est. until a pilot prices them",
+      "tiers": [
+        { "name": "Build", "price": "$2,000-$3,500 one-time (est.)", "includes": "Site + CS agent + lead capture, handed off clean" },
+        { "name": "Monitored retainer", "price": "$300-$500/mo (est.)", "includes": "Agent-monitored uptime and correctness, incident alerts, content/agent updates, monthly proof report" },
+        { "name": "Premium retainer", "price": "$500+/mo (est.)", "includes": "Above plus priority changes and quarterly review; the never-below-$500 tier once proof exists" }
+      ]
+    },
+    "milestones90Days": [
+      "Days 1-7: the one-page offer written (this is the tripwire condition from the fit report)",
+      "Weeks 1-2: demo asset built and filmed (site + agent + refusal reel + monitoring view)",
+      "Weeks 3-6: one warm pilot live, instrumented on leads captured and incidents caught",
+      "Weeks 7-12: pilot converts to paid retainer or produces a documented no; only then schedule a pitch-volume gate",
+      "Day 90: /idea-fit re-run; BUILD ON requires a paying or converting pilot, otherwise PARK with the diagnostic reading recorded"
+    ]
+  },
+  "valueLadder": [
+    { "tier": "Lead magnet", "offer": "Free missed-lead / site-health audit for a named local business (what you lose at the verification step, what a monitored agent would have caught)", "price": "Free", "goal": "Start the conversation with evidence, not a pitch" },
+    { "tier": "Frontend", "offer": "The build: site + CS agent + lead capture", "price": "$2,000-$3,500 (est.)", "goal": "Deliver the visible asset; earn the right to the retainer" },
+    { "tier": "Core", "offer": "Agent-monitored management retainer with monthly proof report", "price": "$300-$500/mo (est.)", "goal": "The actual product; MRR that compounds toward income replacement" },
+    { "tier": "Backend", "offer": "Multi-location, referral network, later remote-only delivery beyond the home metro", "price": "Custom (est.)", "goal": "Scale past the founder's drive-radius without changing the offer" }
+  ],
+  "frameworks": {
+    "valueEquation": {
+      "dreamOutcome": "Never lose a lead to a dead site or a dumb bot, without hiring anyone or learning anything",
+      "perceivedLikelihood": "High once demoed: the refusal reel and the alert view are proof most competitors cannot show",
+      "timeDelay": "Short: site + agent live in days (build speed is evidenced), monitoring value visible in the first monthly report",
+      "effortAndSacrifice": "Near zero for the client (that is the product); the effort concentrates on the operator, which is the fit-report concern",
+      "verdict": "Strong equation for the client. The unresolved side of the equation is the operator's own effort economics, not the buyer's."
+    },
+    "marketMatrix": {
+      "quadrant": "Niche Down",
+      "explanation": "Crowded category (SMB sites + AI), defensible sub-niche (reliability-contracted, agent-monitored retainer), winnable at solo-operator scale in a local market."
+    },
+    "acp": {
+      "audience": "Local service businesses in the builder's metro that live on referrals and missed calls: trades, clinics, salons, home services",
+      "community": "Local chambers, BNI-style referral groups, and the builder's existing LinkedIn build-in-public audience (unswept; flagged as a research gap)",
+      "product": "Productized build + monitored retainer with a monthly proof artifact; the refusal demo is the signature move"
+    }
+  },
+  "risks": [
+    { "risk": "Founder sales capacity: five weeks of evidence show zero voluntary motion toward selling; the model depends on it.", "mitigation": "The refocused aim (demo first, one warm pilot, no volume gate) plus the 7-day offer-doc tripwire; if the tripwire fails again, PARK and read it as a preference, not a scheduling accident." },
+    { "risk": "The reliability pitch leans on an agent-monitoring artifact that is not yet stable in the builder's own stack.", "mitigation": "Fix the builder's own morning-report/monitoring pipeline first and demo THAT: the operator's own stack as client zero. Dogfooding is the proof the pitch needs anyway." },
+    { "risk": "Commodity gravity: local buyers price-anchor on $97/mo platform tools and cheap configurators.", "mitigation": "Never compete on setup price; sell the monthly proof report and refusal behavior, which the $97 tier structurally cannot deliver." },
+    { "risk": "Retainer service creep: 'monitored management' becomes unbounded IT support.", "mitigation": "One-page SLA: what is watched, what is fixed, what is billable; the one-offer constraint from the original decision stays." },
+    { "risk": "Small-metro ceiling: the builder's local market caps client count and referral velocity.", "mitigation": "Accept for phase one (in-person is the moat early); the backend tier goes remote once the offer is proven." }
+  ],
+  "sources": [
+    { "title": "LeadsAgent: 27% of small businesses have no website (2026)", "url": "https://leadsagent.io/blog/businesses-without-website-statistics" },
+    { "title": "Webstacks: 2025 website maintenance cost breakdown", "url": "https://www.webstacks.com/blog/how-much-does-website-maintenance-cost" },
+    { "title": "Network Solutions: website maintenance cost, monthly and yearly", "url": "https://www.networksolutions.com/blog/website-maintenance-cost/" },
+    { "title": "FatLab: website maintenance packages compared (2026)", "url": "https://fatlabwebsupport.com/blog/website-maintenance/website-maintenance-packages-compared-your-complete-buyers-guide/" },
+    { "title": "Booth Associates: AI statistics for small business 2026 (US Chamber data)", "url": "https://boothassociatesllc.com/ai-statistics-small-business-2026.html" },
+    { "title": "Capsule: small business AI adoption statistics 2026", "url": "https://capsulecrm.com/blog/small-business-ai-adoption-statistics/" },
+    { "title": "Citrusbug: AI agents statistics 2026 (Intercom resolution rate, SMB agent adoption)", "url": "https://citrusbug.com/blog/ai-agents-statistics/" },
+    { "title": "HighLevel support: AI products pricing", "url": "https://help.gohighlevel.com/support/solutions/articles/155000006652-ai-product-pricing" },
+    { "title": "Replifast: Podium pricing 2026", "url": "https://www.replifast.com/blog/podium-pricing-2026" },
+    { "title": "RocketLauncher: Birdeye pricing tiers 2026", "url": "https://rocketlauncher.ai/alternatives/birdeye" },
+    { "title": "BotPenguin: how to sell AI chatbots to local businesses (2026)", "url": "https://botpenguin.com/blogs/how-to-sell-chatbots-to-local-businesses" },
+    { "title": "AI Business: selling AI chatbots to local businesses, benchmarks (promotional; est.)", "url": "https://aibusiness.vc/solo/ai-chatbot-local-business" },
+    { "title": "LinkedIn (N. Puruczky): why AI agencies are dying in 2026", "url": "https://www.linkedin.com/posts/nicholas-puruczky-113818198_why-ai-agencies-are-dying-in-2026-and-whats-activity-7409246433360416770-tk4X" }
+  ],
+  "fitReport": {
+    "generatedAt": "2026-07-19",
+    "projectPath": "(no repo exists; reality side evidenced from the builder's decision-log audit, 2026-07-19)",
+    "auditRef": "Operator decision-log audit 2026-07-19: four-repo commit-history sweep, 2026-06-13 to 2026-07-19",
+    "verdict": "REFOCUS",
+    "confidence": "Medium",
+    "verdictNote": "The market clears the idea; the evidence indicts the aim. Retainer economics are real and sourced, the reliability wedge is genuinely open, and build feasibility is proven by the builder's own July record (fev: full-stack tested app in a day). But the committed motion (ten cold in-person pitches on day-job gap time, volume-gated) produced zero artifacts in five weeks, including the one-page offer doc that costs an evening. REFOCUS: same product, same niche, radically smaller aim. Build the demo asset first (a build task, which matches demonstrated behavior), then ONE warm-network pilot. No pitch-volume gate until a converted pilot exists. The single condition: the one-page offer doc within 7 days of reaffirming the path. If it does not happen again, the next re-run rules PARK, read as 'does not want this business,' not 'ran out of time.'",
+    "wedgeCheck": "No product drift is possible because no product exists; the drift is attentional. This is the only idea in the operator's active set that never entered the library until this report, while its committed checkpoints lapsed. The wedge itself survives scrutiny: reliability-contracted agents remain unclaimed in the researched field, and the builder is unusually credentialed for exactly that wedge. One wedge dependency is flagged honestly: the agent-monitoring artifact the pitch leans on is not yet stable in the builder's own stack, so 'client zero' work (the builder's own monitoring pipeline) is wedge work, not a distraction.",
+    "completion": [
+      { "aspect": "One-page offer (one client type, one price)", "status": "missing", "evidence": "No document in any repo or decision log as of 2026-07-19" },
+      { "aspect": "Demo asset: fake local business site + CS agent", "status": "missing", "evidence": "No repo exists" },
+      { "aspect": "Agent refusal behavior (in-lane proof)", "status": "missing", "evidence": "No demo; concept documented in the operator's decision log only" },
+      { "aspect": "Monitoring/alert view (the retainer's product)", "status": "missing", "evidence": "Pattern proven on the builder's own agent stack in April; artifact currently unstable (morning-report pipeline failing on fetch backend as of 2026-07-18)" },
+      { "aspect": "Repeatable build template", "status": "partial", "evidence": "Not extracted as a template, but the capability is evidenced: fev shipped in one day with 161/161 tests (2026-07-17)" },
+      { "aspect": "Pitch/lead infrastructure", "status": "partial", "evidence": "Operator's command-center Discord has built-out FEV channels (local-biz-offer, client-demos, lead-research) as of 2026-07; channels exist, content does not" }
+    ],
+    "scopeRulings": [
+      { "observation": "The original plan's first gate was ten cold in-person pitches by 2026-08-21.", "ruling": "Cut. Replace with one warm-network pilot; the volume gate returns only after a converted pilot. Research basis: the practitioner failure signal says distribution appetite, not tech, kills these agencies, and five weeks of evidence puts this builder's cold-sales capacity near zero." },
+      { "observation": "The monitoring layer was pitched as 'already built and proven' on the builder's own agent.", "ruling": "Keep the claim's direction, correct its tense: pattern proven, artifact unstable. Fixing the builder's own monitoring pipeline is promoted to wedge work (client zero)." },
+      { "observation": "The one-offer/one-client-type/one-price constraint from the original decision.", "ruling": "Keep unchanged. It is the strategy, and it survived the research pass intact." }
+    ],
+    "monetization": "Nothing exists in code or contract form. The research says the eventual shape is $2K-3.5K builds feeding $300-500/mo monitored retainers (est.), with the monthly proof report as the retention artifact. Build no billing before the pilot; price the pilot manually.",
+    "scoreAdjustments": [
+      { "dimension": "goToMarket", "was": 6, "now": 4, "reason": "The original plan assumed pitch capacity on day-job gap time; the five-week commit record evidences zero voluntary sales motion, including free items. This is the number the REFOCUS rests on." },
+      { "dimension": "feasibility", "was": 7, "now": 8, "reason": "Build speed is now evidenced, not assumed: one-day full-stack ship with tests (fev, 2026-07-17). Better than the plan believed." }
+    ]
+  },
+  "buildKit": {
+    "generatedAt": "2026-07-19",
+    "prd": {
+      "problem": "Local service businesses lose referred customers to dead or stale web presence and lose leads to missed messages; AI tools sold to fix this are configured once and rot with no reliability owner.",
+      "targetUser": "Buyer: owner-operator of a local service business (one client type chosen in the offer doc). Demo persona: a realistic fake business of that type.",
+      "coreFeatures": [
+        "Demo business site: fast, clean, lead-capture-first, built from a repeatable template",
+        "CS agent grounded in the business's real context (hours, services, pricing policy) that answers correctly, captures leads, and visibly refuses or hands off out-of-scope queries",
+        "Monitoring/alert view: what the operator sees on downtime or agent failure, and the alert that fires (mock acceptable for demo)",
+        "Monthly client proof report template: uptime, conversations, leads, incidents caught",
+        "The one-page offer document (a feature, not paperwork: it gates everything else)"
+      ],
+      "nonGoals": [
+        "No billing or client portal before a converted pilot",
+        "No menu of services; one offer, one client type, one price",
+        "No cold-pitch volume motion before the pilot converts",
+        "No multi-location or remote-delivery features in v1"
+      ],
+      "successMetrics": [
+        "Offer doc exists within 7 days of path reaffirmation (tripwire)",
+        "Demo asset filmed: refusal reel + alert view, shareable in under 3 minutes",
+        "One warm pilot live within 6 weeks, instrumented on leads captured and incidents caught",
+        "Pilot converts to a paid retainer by day 90, or produces a documented no"
+      ]
+    },
+    "techStack": {
+      "suggested": "The builder's proven stack: React + Vite + TypeScript + Tailwind, Supabase, Vercel; agent layer on the builder's existing Claude tooling; monitoring via simple scheduled checks + Discord webhooks (the operator's existing alert surface)",
+      "rationale": "Identical to the stack that shipped fev in a day; never propose a rewrite from a fit report. Discord is already the operator's command center, so alerts land where the operator already looks."
+    },
+    "backlog": [
+      { "title": "Write the one-page offer (client type, price, what the retainer watches)", "priority": "P0", "description": "The tripwire. Everything below is gated on it." },
+      { "title": "Build the demo business site from a template worth reusing", "priority": "P0", "description": "Extract the repeatable parts as the build template while building." },
+      { "title": "Ground the CS agent + script the refusal reel", "priority": "P0", "description": "Five in-scope answers, three out-of-scope refusals/handoffs, filmed." },
+      { "title": "Stabilize client-zero monitoring (the operator's own pipeline) and reuse it as the demo alert view", "priority": "P1", "description": "Turns the current morning-report failure into the demo's proof artifact." },
+      { "title": "Monthly proof-report template", "priority": "P1", "description": "The retention artifact; one page, numbers over prose." },
+      { "title": "Warm-pilot shortlist (5 names) from existing network", "priority": "P2", "description": "Names only; outreach starts when the demo is filmed." }
+    ],
+    "buildPrompt": "You are building a demo asset for a productized local-business offer: a realistic fake local service business (type per the offer doc) with a website, a customer-service agent, and a monitoring view. WHAT EXISTS: nothing in this repo yet; the builder has a proven one-day full-stack build pattern (React + Vite + TypeScript + Tailwind, Supabase, Vercel) and an existing Discord-based alert surface. BUILD, IN ORDER: (1) the business site from a clean reusable template, lead capture first; (2) a CS agent grounded in a business-context file (hours, services, policies) that answers in-scope questions, captures leads, and VISIBLY refuses or hands off out-of-scope requests; the refusal behavior is a feature, make it demoable; (3) a monitoring/alert view showing uptime and agent-correctness checks with alerts firing to Discord (mock data acceptable, real checks preferred); (4) a one-page monthly client report template fed by the same checks. DO NOT BUILD: billing, portals, multi-tenant anything, service menus. --- BUSINESS CONTEXT --- Wedge: operations-grade reliability as the product; the field (white-label GoHighLevel agencies at $97-497/mo platform cost, Podium $399-999/mo + $99 AI receptionist, Birdeye $299-449/location/mo) sells configuration, not accountability; nobody contracts on monitored correctness and refusal behavior. Demand: ~27% of US small businesses lack a website (trades 45-56%); a local business without one loses est. 20-35% of referrals at verification; SMB AI use is 89% but only ~17.7% pay, the usage-to-paid gap is the window; agents resolve ~67% of CS queries (Intercom 2026). Economics (est., benchmark-aligned): $2K-3.5K build, $300-500/mo monitored retainer, monthly proof report as retention artifact; never compete on setup price against $97/mo platform tools, sell the proof report and refusal behavior they structurally cannot deliver. The demo must sell the RETAINER, not the build: lead with the alert view, prove the refusal, close with the monthly report."
+  }
+}
