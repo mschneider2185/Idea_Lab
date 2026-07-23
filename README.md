@@ -16,6 +16,9 @@ scripts/build.mjs               Zero-dependency static site generator
 docs/                           The generated, browsable site (GitHub Pages ready)
 .claude/skills/idea-research/   The /idea-research skill that writes new reports
 .claude/skills/idea-build/      The /idea-build skill that turns a report into a build kit
+.claude/skills/idea-fit/        The /idea-fit skill that diffs a real project vs. its research
+skills/                         Vendor-neutral mirror of the three skills (auto-generated;
+                                the method, portable to any agent — see skills/README.md)
 research/ideabrowser-teardown.md  Notes on the real ideabrowser.com — features, pricing,
                                 the Hub, what's cloned here and what's still open
 ```

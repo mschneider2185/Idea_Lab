@@ -10,6 +10,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const IDEAS_DIR = join(ROOT, "ideas");
 const OUT_DIR = join(ROOT, "docs");
+const CLAUDE_SKILLS_DIR = join(ROOT, ".claude", "skills");
+const PORTABLE_SKILLS_DIR = join(ROOT, "skills");
 
 const SITE_NAME = "Idea Lab";
 const SITE_TAGLINE = "Deep-researched product ideas, IdeaBrowser style — self-hosted.";
@@ -538,6 +540,27 @@ for (const idea of ideas) {
 }
 console.log(`  ✓ index.html (${ideas.length} idea${ideas.length === 1 ? "" : "s"})`);
 console.log(`Done → docs/`);
+
+// ---------------------------------------------------------------------------
+// Mirror skills → portable, vendor-neutral copy
+// ---------------------------------------------------------------------------
+// `.claude/skills/` is canonical (the Claude Code harness reads it, so the
+// slash commands live there). We also keep a plain `skills/` mirror so the
+// *method* survives independent of any one agent's harness. This copy is
+// generated on every build — edit `.claude/skills/`, never `skills/`.
+
+if (existsSync(CLAUDE_SKILLS_DIR)) {
+  let mirrored = 0;
+  for (const entry of readdirSync(CLAUDE_SKILLS_DIR).sort()) {
+    const src = join(CLAUDE_SKILLS_DIR, entry, "SKILL.md");
+    if (!existsSync(src)) continue;
+    const destDir = join(PORTABLE_SKILLS_DIR, entry);
+    mkdirSync(destDir, { recursive: true });
+    writeFileSync(join(destDir, "SKILL.md"), readFileSync(src, "utf8"));
+    mirrored++;
+  }
+  console.log(`  ✓ mirrored ${mirrored} skill${mirrored === 1 ? "" : "s"} → skills/`);
+}
 
 // ---------------------------------------------------------------------------
 // Styles
